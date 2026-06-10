@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tjänst - ULMAP</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        /* Shared Styles from about.html */
+        .herodiv-small {
+            height: 300px;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .service-content {
+            padding: 5rem 0;
+            line-height: 1.8;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .spacer {
+            height: 50px;
+        }
+
+        /* Additional styles to match index.html feel */
+        .ulmap-green-text {
+            color: #1f5a2a !important;
+        }
+
+        .ulmap-green-bg {
+            background-color: #1f5a2a !important;
+        }
+        
+        article img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-outline-success {
+            color: #1f5a2a;
+            border-color: #1f5a2a;
+        }
+
+        .btn-outline-success:hover {
+            background-color: #1f5a2a;
+            border-color: #1f5a2a;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="herodiv-small">
+        <div class="container">
+            <h1 id="service-title" class="display-4 fw-bold">Tjänster</h1>
+            <p id="service-excerpt" class="lead">Laddar information...</p>
+        </div>
+    </div>
+
+    <div class="service-content">
+        <div class="container">
+            <div id="service-info" class="service-info text-center">
+                <div class="spinner-border text-success" role="status">
+                    <span class="visually-hidden">Laddar...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function loadService() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const idOrSlug = urlParams.get('id');
+
+            if (!idOrSlug) {
+                window.location.href = "tjanster.html";
+                return;
+            }
+
+            try {
+                // Determine if it's an ID (numeric) or Slug (string)
+                const isNumeric = !isNaN(idOrSlug);
+                const url = isNumeric 
+                    ? `https://api.ulmap.se/wp-json/wp/v2/tjanster/${idOrSlug}`
+                    : `https://api.ulmap.se/wp-json/wp/v2/tjanster?slug=${idOrSlug}`;
+
+                const res = await fetch(url);
+                if (!res.ok) throw new Error("Service not found");
+                
+                const data = await res.json();
+                const post = Array.isArray(data) ? data[0] : data;
+
+                if (!post) throw new Error("Service not found");
+
+                document.getElementById("service-title").innerHTML = post.title.rendered;
+                document.title = `${post.title.rendered} - ULMAP`;
+
+                document.getElementById("service-info").classList.remove('text-center');
+                document.getElementById("service-info").innerHTML = `
+                    <article>
+                        ${post.content.rendered}
+                    </article>
+                    <div class="mt-5 text-center">
+                        <a href="tjanster.html" class="btn btn-outline-success">Tillbaka till alla tjänster</a>
+                    </div>
+                `;
+                
+                if (post.excerpt && post.excerpt.rendered) {
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = post.excerpt.rendered;
+                    document.getElementById("service-excerpt").innerText = tempDiv.innerText;
+                } else {
+                    document.getElementById("service-excerpt").innerText = "Expertis för dina behov.";
+                }
+            } catch (err) {
+                console.error(err);
+                document.getElementById("service-info").innerHTML = "<p class='text-danger'>Kunde inte ladda tjänsten.</p>";
+                document.getElementById("service-excerpt").innerText = "Ett fel uppstod.";
+            }
+        }
+
+        loadService();
+    </script>
+</body>
+
+</html>

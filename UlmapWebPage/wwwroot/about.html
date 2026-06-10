@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Om oss - ULMAP</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+
+        /* About Specific Styles */
+        .herodiv-small {
+            height: 300px;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .about-content {
+            padding: 5rem 0;
+            line-height: 1.8;
+        }
+        .container {
+            position: relative;
+        }
+
+        .spacer {
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="herodiv-small">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Om oss</h1>
+            <p class="lead">Lär känna människorna och visionen bakom ULMAP.</p>
+        </div>
+    </div>
+
+    <div class="about-content">
+        <div class="container">
+            <div id="about-info" class="about-info"></div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+async function loadabout() {
+    try {
+        const res = await fetch("https://api.ulmap.se/wp-json/wp/v2/posts/7");
+
+        if (!res.ok) throw new Error("Post not found");
+
+        const post = await res.json();
+
+        document.getElementById("about-info").innerHTML = `
+            <article>
+                ${post.content.rendered}
+            </article>
+        `;
+    } catch (err) {
+        document.getElementById("about-info").innerHTML = "Could not load post.";
+    }
+}
+
+loadabout();
+</script>

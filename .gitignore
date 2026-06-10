@@ -1,0 +1,39 @@
+# .NET Core
+bin/
+obj/
+*.user
+*.userosscache
+*.sln.docuser
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docuser
+
+# Web
+node_modules/
+.env
+.env.*
+!.env.example
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# WordPress
+wordpress/wp-config.php
+wordpress/wp-content/uploads/
+wordpress/wp-content/upgrade/
+wordpress/wp-content/backup-db/
+wordpress/wp-content/cache/
+wordpress/wp-content/languages/
+*.log
+
+# Gemini CLI
+.gemini/
