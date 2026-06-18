@@ -17,10 +17,12 @@
         .ulmap-green-bg {
             background-color: #1f5a2a !important;
         }
+
         .ulmap-sand-text {
             color: #D6C4A1 !important;
         }
-        .ulmap-sand-bg{
+
+        .ulmap-sand-bg {
             background-color: #D6C4A1 !important;
         }
 
@@ -252,6 +254,18 @@
             background: linear-gradient(to top, rgba(31, 90, 42, 0.9) 0%, rgba(31, 90, 42, 0.4) 60%, rgba(31, 90, 42, 0.2) 100%);
         }
 
+        .work-card.small {
+            height: 250px;
+        }
+
+        .work-card.small .work-title {
+            font-size: 1.25rem;
+        }
+
+        .work-card.small .work-overlay {
+            padding: 1.5rem;
+        }
+
         .work-title {
             font-size: 1.5rem;
             font-weight: 700;
@@ -289,7 +303,8 @@
                 class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                 <span class="fs-4 fw-bold ulmap-green-text">ULMAP</span> </a>
             <ul class="nav nav-pills">
-                <li class="nav-item"><a href="#contactUsdiv" class="nav-link active ulmap-green-bg" aria-current="page">Kontakta oss</a></li>
+                <li class="nav-item"><a href="#contactUsdiv" class="nav-link active ulmap-green-bg"
+                        aria-current="page">Kontakta oss</a></li>
                 <li class="nav-item dropdown-mega">
                     <a href="tjanster.html" class="nav-link black-text">Tjänster</a>
                     <div class="mega-menu">
@@ -446,22 +461,31 @@
             </div>
         </div>
     </div>
+
     <div class="spacer"></div>
-    <div class="shortAboutUs pt-5">
+    <div class="services">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h2 class="fw-bold">Om ULMAP</h2>
-                    <p id="about-info"></p>
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Våra Tjänster</h2>
+                <div class="ulmap-green-bg mx-auto" style="height: 4px; width: 60px; border-radius: 2px;"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <h5 class="fw-bold">Projektledning</h5>
+                    <p>Vi hjälper dig att planera, organisera och leda dina projekt till framgång.</p>
                 </div>
-                <div class="col-md-6">
-                    <!-- <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=600" alt="Om oss" class="img-fluid rounded"> -->
+                <div class="col-md-4 text-center">
+                    <h5 class="fw-bold">Kartor och Visuell kommunikation</h5>
+                    <p>Skapa tydliga och informativa kartor och visuella material för effektiv kommunikation.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h5 class="fw-bold">Systemutveckling</h5>
+                    <p>Utveckla skräddarsydda digitala lösningar som effektiviserar dina processer.</p>
                 </div>
             </div>
-
         </div>
-
     </div>
+
     <div class="spacer"></div>
     <div class="doneWorkdiv">
         <div class="container">
@@ -509,9 +533,24 @@
             </div>
         </div>
     </div>
-
     <div class="spacer"></div>
-    <div id="contactUsdiv" class="contactUsdiv">
+    <div class="shortAboutUs py-5">
+        <div class="container border-bottom">
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
+                    <h2 class="fw-bold ulmap-green-text fs-1">Om ULMAP</h2>
+                    <p id="about-info"></p>
+                </div>
+                <div class="col-md-6">
+                    <!-- <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=600" alt="Om oss" class="img-fluid rounded"> -->
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="spacer"></div>
+    <div id="contactUsdiv" class="contactUsdiv ">
         <div class="container text-center">
             <h2 class="fw-bold mb-4">Kontakta oss</h2>
             <div class="d-flex">
@@ -520,17 +559,19 @@
                     <p class="mb-4">Har du frågor eller vill diskutera ett projekt? Tveka inte att höra av dig!</p>
                 </div>
                 <div class="col-md-6">
-                    <form>
+                    <form action="sendEmail.php" method="POST">
                         <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Ditt namn" required>
+                            <input type="text" name="name" class="form-control" placeholder="Ditt namn" required>
                         </div>
                         <div class="mb-3">
-                            <input type="email" class="form-control" placeholder="Din e-post" required>
+                            <input type="email" name="email" class="form-control" placeholder="Din e-post" required>
                         </div>
                         <div class="mb-3">
-                            <textarea class="form-control" rows="4" placeholder="Ditt meddelande" required></textarea>
+                            <textarea class="form-control" name="message" rows="4" placeholder="Ditt meddelande"
+                                required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-lg">Skicka</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -553,23 +594,23 @@
 </html>
 
 <script>
-async function loadabout() {
-    try {
-        const res = await fetch("https://api.ulmap.se/wp-json/wp/v2/posts/12");
+    async function loadabout() {
+        try {
+            const res = await fetch("https://api.ulmap.se/wp-json/wp/v2/posts/12");
 
-        if (!res.ok) throw new Error("Post not found");
+            if (!res.ok) throw new Error("Post not found");
 
-        const post = await res.json();
+            const post = await res.json();
 
-        document.getElementById("about-info").innerHTML = `
+            document.getElementById("about-info").innerHTML = `
             <article>
                 ${post.content.rendered}
             </article>
         `;
-    } catch (err) {
-        document.getElementById("about-info").innerHTML = "Could not load post.";
+        } catch (err) {
+            document.getElementById("about-info").innerHTML = "ULMAP grundades med visionen att erbjuda innovativa och pålitliga lösningar inom projektledning, kartografi och systemutveckling. Med en passion för kvalitet och kundnöjdhet har vi snabbt etablerat oss som en ledande aktör i branschen. Vårt team av experter arbetar nära våra kunder för att förstå deras unika behov och leverera skräddarsydda lösningar som driver framgång.";
+        }
     }
-}
 
-loadabout();
+    loadabout();
 </script>
