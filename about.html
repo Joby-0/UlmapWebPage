@@ -69,7 +69,7 @@ async function loadabout() {
             </article>
         `;
     } catch (err) {
-        document.getElementById("about-info").innerHTML = "Could not load post.";
+        document.getElementById("about-info").innerHTML = "<p class='text-danger'>Kunde inte ladda informationen. Försök igen senare.</p>";
     }
 }
 
