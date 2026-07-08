@@ -1,0 +1,10 @@
+    <footer class="text-center py-4">
+        <div class="container">
+            <div class="nav-pills py-3 mb-2 border-bottom">
+                <a href="#contactUsdiv" class="nav-link d-inline-block px-3">Kontakta oss</a>
+                <a href="tjanster.html" class="nav-link d-inline-block px-3">Tjänster</a>
+                <a href="about.html" class="nav-link d-inline-block px-3">Om oss</a>
+            </div>
+            <p class="mb-0">&copy; ULMAP AB. 2026</p>
+        </div>
+    </footer>

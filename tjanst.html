@@ -41,7 +41,7 @@
         .ulmap-green-bg {
             background-color: #1f5a2a !important;
         }
-        
+
         article img {
             max-width: 100%;
             height: auto;
@@ -82,55 +82,144 @@
     </div>
 
     <script>
-        async function loadService() {
+        const services = {
+            "bocker-skrifter-for-barn": {
+                title: "Informationsböcker och skrifter för barn",
+                excerpt: "Anpassade informationsböcker och skrifter för barn och unga.",
+                content: `
+                    <p>
+    Att förmedla kunskap till barn handlar om att väcka nyfikenhet och göra lärandet roligt.
+    Därför producerar vi informationsböcker och skrifter som är anpassade för barn och unga,
+    med ett språk och innehåll som engagerar och inspirerar.
+</p>
+
+<p>
+    Vi skapar berättelser på rim, sagor och pedagogiska texter som gör det lättare att förstå
+    allt från natur och miljö till historia, kultur och lokala sevärdheter. Genom fantasifulla
+    berättelser och tydliga illustrationer blir informationen både lättillgänglig och minnesvärd.
+</p>
+
+<p>
+    Varje bok eller skrift utformas efter målgrupp och syfte. Vi hjälper till med idé, research,
+    textproduktion, illustration, layout och färdig produktion – alltid med fokus på att skapa
+    ett material som barn tycker om att läsa och vuxna gärna använder i undervisning och verksamhet.
+</p>
+
+<p>
+    Oavsett om ni vill ta fram en barnbok om ett naturreservat, en historisk plats, en kommun,
+    ett museum eller ett besöksmål hjälper vi er att förvandla fakta till berättelser som
+    inspirerar nästa generation att upptäcka, lära och utforska.
+</p>
+                `
+            },
+            "skyltar-informationsmaterial": {
+                title: "Informationsskyltar och informationstavlor ",
+                excerpt: "Tydlig information som håller över tid.",
+                content: `
+                    <section class="info-boards">
+    <div class="container">
+        <h1>Informationsskyltar &amp; Informationstavlor</h1>
+
+        <p>
+            Skapa en välkomnande och lättnavigerad miljö med informationsskyltar och
+            informationstavlor som kombinerar funktion, kvalitet och design.
+            Vi tillverkar skräddarsydda lösningar för kommuner, företag,
+            bostadsrättsföreningar, naturreservat, turistmål, parker,
+            industriområden och andra offentliga miljöer.
+        </p>
+
+        <p>
+            Våra informationstavlor kan utformas med kartor, texter, bilder,
+            symboler och logotyper för att ge besökare en tydlig överblick och
+            vägledning. Oavsett om du behöver en orienteringskarta,
+            områdesinformation, historisk information eller säkerhetsinstruktioner
+            hjälper vi dig att ta fram en lösning som passar just ditt projekt.
+        </p>
+
+        <h2>Vi erbjuder</h2>
+
+        <ul class="features-list">
+            <li>Skräddarsydd design efter era önskemål.</li>
+            <li>Högupplösta kartor och en tydlig, lättläst layout.</li>
+            <li>UV-beständiga och väderbeständiga material för lång livslängd.</li>
+            <li>Informationstavlor för både inom- och utomhusbruk.</li>
+            <li>Flera storlekar, material och monteringsalternativ.</li>
+        </ul>
+
+        <h2>Från idé till färdig lösning</h2>
+
+        <p>
+            Vi hjälper dig genom hela processen – från idé och layout till färdig
+            produktion. Med fokus på tydlig kommunikation, hållbara material och
+            hög kvalitet skapar vi informationsskyltar som gör det enkelt för
+            besökare att hitta rätt och ta del av viktig information.
+        </p>
+
+        <div class="cta-box">
+            <h3>Begär en kostnadsfri offert</h3>
+            <p>
+                Kontakta oss gärna för att diskutera ditt projekt. Tillsammans
+                skapar vi informationstavlor som är informativa, hållbara och
+                estetiskt tilltalande.
+            </p>
+
+            <a href="/kontakt" class="btn btn-primary">
+                Kontakta oss
+            </a>
+        </div>
+    </div>
+</section>
+                `
+            },
+            "mark-och-anlaggning": {
+                title: "Mark och anläggning",
+                excerpt: "Professionell planering och utförande av mark- och anläggningsprojekt.",
+                content: `
+                    <h2 class="h3 mb-4">Digital strategi</h2>
+                    <p>Vi hjälper dig att skapa en strategi som passar både kunder, målgrupp och affärsmål.</p>
+                    <p>Från idé till genomförande fokuserar vi på resultat som faktiskt gör skillnad.</p>
+                `
+            }
+        };
+
+        function getServiceFromUrl() {
             const urlParams = new URLSearchParams(window.location.search);
-            const idOrSlug = urlParams.get('id');
+            const name = urlParams.get('name') || urlParams.get('slug') || urlParams.get('id');
 
-            if (!idOrSlug) {
-                window.location.href = "tjanster.html";
-                return;
+            if (!name) {
+                return null;
             }
 
-            try {
-                // Determine if it's an ID (numeric) or Slug (string)
-                const isNumeric = !isNaN(idOrSlug);
-                const url = isNumeric 
-                    ? `https://api.ulmap.se/wp-json/wp/v2/tjanster/${idOrSlug}`
-                    : `https://api.ulmap.se/wp-json/wp/v2/tjanster?slug=${idOrSlug}`;
+            const normalizedName = decodeURIComponent(name).trim().toLowerCase();
+            return services[normalizedName] || null;
+        }
 
-                const res = await fetch(url);
-                if (!res.ok) throw new Error("Service not found");
-                
-                const data = await res.json();
-                const post = Array.isArray(data) ? data[0] : data;
+        function renderService(service) {
+            document.getElementById("service-title").innerHTML = service.title;
+            document.title = `${service.title} - ULMAP`;
 
-                if (!post) throw new Error("Service not found");
+            document.getElementById("service-info").classList.remove('text-center');
+            document.getElementById("service-info").innerHTML = `
+                <article>
+                    ${service.content}
+                </article>
+                <div class="mt-5 text-center">
+                    <a href="tjanster.html" class="btn btn-outline-success">Tillbaka till alla tjänster</a>
+                </div>
+            `;
 
-                document.getElementById("service-title").innerHTML = post.title.rendered;
-                document.title = `${post.title.rendered} - ULMAP`;
+            document.getElementById("service-excerpt").innerText = service.excerpt;
+        }
 
-                document.getElementById("service-info").classList.remove('text-center');
-                document.getElementById("service-info").innerHTML = `
-                    <article>
-                        ${post.content.rendered}
-                    </article>
-                    <div class="mt-5 text-center">
-                        <a href="tjanster.html" class="btn btn-outline-success">Tillbaka till alla tjänster</a>
-                    </div>
-                `;
-                
-                if (post.excerpt && post.excerpt.rendered) {
-                    const tempDiv = document.createElement('div');
-                    tempDiv.innerHTML = post.excerpt.rendered;
-                    document.getElementById("service-excerpt").innerText = tempDiv.innerText;
-                } else {
-                    document.getElementById("service-excerpt").innerText = "Expertis för dina behov.";
-                }
-            } catch (err) {
-                console.error(err);
-                document.getElementById("service-info").innerHTML = "<p class='text-danger'>Kunde inte ladda tjänsten.</p>";
-                document.getElementById("service-excerpt").innerText = "Ett fel uppstod.";
-            }
+        function loadService() {
+            const service = getServiceFromUrl();
+
+            // if (!service) {
+            //     window.location.href = "tjanster.html";
+            //     return;
+            // }
+
+            renderService(service);
         }
 
         loadService();

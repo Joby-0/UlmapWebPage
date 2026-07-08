@@ -300,7 +300,8 @@
 </head>
 
 <body>
-    <div class="container">
+    <?php include 'header.php'; ?>
+    <!-- <div class="container">
         <header class="d-flex flex-wrap justify-content-center py-3">
             <a href="/"
                 class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
@@ -413,7 +414,7 @@
                 <li class="nav-item"><a href="about.html" class="nav-link black-text">Om oss</a></li>
             </ul>
         </header>
-    </div>
+    </div> -->
 
     <div style="background: url('maplines.png'); background-size: cover; color: #000000;" class="herodiv">
         <div class="container">
@@ -443,21 +444,21 @@
             </div>
             <div class="row">
                 <div class="col-md-4 text-center">
-                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=400"
+                    <img src="Expertis.png"
                         alt="Expertis" class="mb-3 rounded-circle"
                         style="width: 120px; height: 120px; object-fit: cover;">
                     <h5 class="fw-bold">Expertis</h5>
                     <p>Vårt team består av erfarna proffs inom projektledning, kartografi och systemutveckling.</p>
                 </div>
                 <div class="col-md-4 text-center">
-                    <img src="https://images.unsplash.com/photo-1491895200222-0fc4a4c35e18?auto=format&fit=crop&q=80&w=400"
+                    <img src="right.png"
                         alt="Skräddarsydda lösningar" class="mb-3 rounded-circle"
                         style="width: 120px; height: 120px; object-fit: cover;">
                     <h5 class="fw-bold">Skräddarsydda lösningar</h5>
                     <p>Vi anpassar våra tjänster efter dina specifika behov och mål för att säkerställa framgång.</p>
                 </div>
                 <div class="col-md-4 text-center">
-                    <img src="https://images.unsplash.com/photo-1503424886309-8bdbf1cbbf9b?auto=format&fit=crop&q=80&w=400"
+                    <img src="kund.png"
                         alt="Kundfokus" class="mb-3 rounded-circle"
                         style="width: 120px; height: 120px; object-fit: cover;">
                     <h5 class="fw-bold">Kundfokus</h5>
@@ -585,7 +586,8 @@
     </div>
 
     <div class="spacer"></div>
-    <footer class="text-center py-4">
+    <?php include 'footer.php'; ?>
+    <!-- <footer class="text-center py-4">
         <div class="container">
             <div class="nav-pills py-3 mb-2 border-bottom">
                 <a href="#contactUsdiv" class="nav-link d-inline-block px-3">Kontakta oss</a>
@@ -594,7 +596,7 @@
             </div>
             <p class="mb-0">&copy; ULMAP AB. 2026</p>
         </div>
-    </footer>
+    </footer> -->
 </body>
 
 </html>
