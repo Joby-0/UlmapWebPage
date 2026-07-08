@@ -1,0 +1,47 @@
+.ulmap-green-text {
+    color: var(--ulmap-green) !important;
+}
+
+.ulmap-green-bg {
+    background-color: var(--ulmap-green) !important;
+}
+
+.ulmap-green-border {
+    border-color: var(--ulmap-green) !important;
+}
+
+.ulmap-sand-text {
+    color: var(--ulmap-sand) !important;
+}
+
+.ulmap-sand-bg {
+    background-color: var(--ulmap-sand) !important;
+}
+
+.white-text {
+    color: var(--white) !important;
+}
+
+.black-text {
+    color: var(--black) !important;
+}
+
+.container {
+    position: relative;
+}
+
+.spacer {
+    height: var(--spacing-spacer-height);
+}
+
+.nav-link {
+    padding: 0.75rem 1.25rem;
+    font-weight: 500;
+}
+
+article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}

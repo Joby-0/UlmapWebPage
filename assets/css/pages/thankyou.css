@@ -1,0 +1,8 @@
+body {
+    background-color: var(--bg-white);
+    font-family: var(--font-family-base);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}

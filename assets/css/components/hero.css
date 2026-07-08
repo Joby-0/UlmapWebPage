@@ -1,0 +1,36 @@
+.herodiv {
+    height: var(--spacing-hero-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.herodiv-small {
+    height: var(--spacing-small-hero-height);
+    background-color: var(--bg-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.page-content {
+    flex: 1 0 auto;
+    padding: 80px 0;
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background-color: var(--ulmap-green);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    margin: 0 auto 2rem;
+    box-shadow: var(--shadow-success);
+}

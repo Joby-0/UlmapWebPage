@@ -1,0 +1,31 @@
+:root {
+    --ulmap-green: #1f5a2a;
+    --ulmap-green-hover: #16401e;
+    --ulmap-sand: #6FAF45;
+    --ulmap-sand-soft: #f0f7ff;
+    --white: #fff;
+    --black: #000;
+    --text-dark: #333;
+    --text-muted: #444;
+    --border-light: #dee2e6;
+    --border-soft: #eee;
+    --bg-light: #f8f9fa;
+    --bg-off-white: #fcfcfc;
+    --bg-white: #ffffff;
+    --font-family-base: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --spacing-hero-height: 500px;
+    --spacing-small-hero-height: 300px;
+    --spacing-section-padding: 5rem 0;
+    --spacing-spacer-height: 50px;
+    --border-radius-card: 12px;
+    --border-radius-small: 6px;
+    --border-radius-button: 0.5rem;
+    --shadow-card: 0 10px 20px rgba(0, 0, 0, 0.05);
+    --shadow-button-hover: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --shadow-success: 0 10px 20px rgba(31, 90, 42, 0.15);
+    --transition-base: all 0.3s ease;
+    --transition-fast: all 0.2s ease;
+    --transition-slide: transform 0.3s ease;
+    --transition-image: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --mega-menu-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1);
+}

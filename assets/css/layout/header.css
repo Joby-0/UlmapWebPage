@@ -1,0 +1,119 @@
+.nav-item.dropdown-mega {
+    position: static;
+}
+
+.mega-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    min-height: 450px;
+    background-color: var(--bg-white);
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: var(--mega-menu-shadow);
+    z-index: 1000;
+    padding: 3rem 0;
+}
+
+.nav-item.dropdown-mega:hover .mega-menu {
+    display: block;
+}
+
+.mega-menu-content {
+    display: flex;
+    min-height: 380px;
+    position: relative;
+}
+
+.service-groups {
+    width: 30%;
+    border-right: 1px solid var(--border-soft);
+    z-index: 10;
+}
+
+.service-details-container {
+    width: 70%;
+    padding-left: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.service-group-wrapper {
+    position: static;
+}
+
+.group-item {
+    padding: 15px 25px;
+    cursor: pointer;
+    border-radius: var(--border-radius-small);
+    transition: var(--transition-fast);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.group-item:hover {
+    background-color: var(--ulmap-sand-soft);
+    color: var(--ulmap-sand);
+}
+
+.service-pane {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    background-color: var(--bg-white);
+    z-index: 100;
+    padding-left: 3rem;
+    animation: slideInRight 0.2s ease-out;
+}
+
+.service-group-wrapper:hover .service-pane {
+    display: block;
+}
+
+.service-group-wrapper:hover .group-item {
+    background-color: var(--ulmap-sand-soft);
+    color: var(--ulmap-sand);
+    box-shadow: inset 4px 0 0 var(--ulmap-sand);
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+h4 {
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    font-weight: 700;
+    border-bottom: 2px solid var(--ulmap-green);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.service-link {
+    transition: var(--transition-fast);
+    font-size: 1.05rem;
+    border-radius: 4px;
+}
+
+.service-link:hover {
+    padding-left: 10px;
+    color: var(--ulmap-sand) !important;
+    background-color: var(--bg-light);
+}

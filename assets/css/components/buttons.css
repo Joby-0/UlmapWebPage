@@ -1,0 +1,56 @@
+.btn-primary {
+    background-color: var(--ulmap-green);
+    border-color: var(--ulmap-green);
+    transition: var(--transition-base);
+}
+
+.btn-primary:hover {
+    background-color: var(--ulmap-green-hover);
+    border-color: var(--ulmap-green-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-button-hover);
+}
+
+.btn-outline-secondary {
+    color: var(--ulmap-sand);
+    border-color: var(--ulmap-sand);
+    transition: var(--transition-base);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--ulmap-sand);
+    color: var(--white);
+    border-color: var(--ulmap-sand);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-button-hover);
+}
+
+.btn-outline-success {
+    color: var(--ulmap-green);
+    border-color: var(--ulmap-green);
+}
+
+.btn-outline-success:hover {
+    background-color: var(--ulmap-green);
+    border-color: var(--ulmap-green);
+    color: var(--white);
+}
+
+.btn-ulmap {
+    background-color: var(--ulmap-green);
+    color: var(--white);
+    padding: 0.8rem 2.5rem;
+    border-radius: var(--border-radius-button);
+    font-weight: 600;
+    transition: var(--transition-base);
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+}
+
+.btn-ulmap:hover {
+    background-color: var(--ulmap-green-hover);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-success);
+}

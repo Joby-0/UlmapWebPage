@@ -8,300 +8,11 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <style>
-        /* Mega Menu Styles */
-        .ulmap-green-text {
-            color: #1f5a2a !important;
-        }
-
-        .ulmap-green-bg {
-            background-color: #1f5a2a !important;
-        }
-        .ulmap-green-border {
-            border-color: #1f5a2a !important;
-        }
-
-        .ulmap-sand-text {
-            color: #D6C4A1 !important;
-        }
-
-        .ulmap-sand-bg {
-            background-color: #D6C4A1 !important;
-        }
-
-        .white-text {
-            color: #fff !important;
-        }
-
-        .black-text {
-            color: #000 !important;
-        }
-
-        .nav-item.dropdown-mega {
-            position: static;
-        }
-
-        .btn-primary {
-            background-color: #1f5a2a;
-            border-color: #1f5a2a;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: #16401e;
-            border-color: #16401e;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-outline-secondary {
-            color: #D6C4A1;
-            border-color: #D6C4A1;
-            transition: all 0.3s ease;
-        }
-
-        .btn-outline-secondary:hover {
-            background-color: #D6C4A1;
-            color: #fff;
-            border-color: #D6C4A1;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .mega-menu {
-            display: none;
-            position: absolute;
-            left: 0;
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
-            min-height: 450px;
-            background-color: #ffffff;
-            border-bottom: 1px solid #dee2e6;
-            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            padding: 3rem 0;
-        }
-
-        .nav-item.dropdown-mega:hover .mega-menu {
-            display: block;
-        }
-
-        /* Nested Menu Layout */
-        .mega-menu-content {
-            display: flex;
-            min-height: 380px;
-            position: relative;
-            /* Anchor for absolute service panes */
-        }
-
-        /* Left Column: Groups */
-        .service-groups {
-            width: 30%;
-            border-right: 1px solid #eee;
-            z-index: 10;
-        }
-
-        /* Right Column Placeholder Area */
-        .service-details-container {
-            width: 70%;
-            padding-left: 3rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .service-group-wrapper {
-            position: static;
-        }
-
-        .group-item {
-            padding: 15px 25px;
-            cursor: pointer;
-            border-radius: 6px;
-            transition: all 0.2s ease;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 500;
-            color: #444;
-            margin-bottom: 5px;
-            font-size: 1.1rem;
-        }
-
-        .group-item:hover {
-            background-color: #f0f7ff;
-            color: #D6C4A1;
-        }
-
-        /* Sub-menu Panes (The specific services appearing on the right) */
-        .service-pane {
-            display: none;
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 70%;
-            /* Takes up exactly the right column space */
-            height: 100%;
-            background-color: #ffffff;
-            /* Solid white */
-            z-index: 100;
-            padding-left: 3rem;
-            animation: slideInRight 0.2s ease-out;
-        }
-
-        /* Show pane when category is hovered */
-        .service-group-wrapper:hover .service-pane {
-            display: block;
-        }
-
-        /* Active state for group item when hoving the wrapper */
-        .service-group-wrapper:hover .group-item {
-            background-color: #f0f7ff;
-            color: #D6C4A1;
-            box-shadow: inset 4px 0 0 #D6C4A1;
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        /* Styling for the service links on the right */
-        h4 {
-            color: #333;
-            margin-bottom: 2rem;
-            font-weight: 700;
-            border-bottom: 2px solid #1f5a2a;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        .service-link {
-            transition: all 0.2s ease;
-            font-size: 1.05rem;
-            border-radius: 4px;
-        }
-
-        .service-link:hover {
-            padding-left: 10px;
-            color: #D6C4A1 !important;
-            background-color: #f8f9fa;
-        }
-
-        .herodiv {
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        /* Global Layout Helpers */
-        .container {
-            position: relative;
-        }
-
-        .nav-link {
-            padding: 0.75rem 1.25rem;
-            font-weight: 500;
-        }
-
-        /* Done Work Section Styles */
-        .doneWorkdiv {
-            padding: 5rem 0;
-            background-color: #fcfcfc;
-        }
-
-        .work-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            height: 350px;
-            margin-bottom: 2rem;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-            cursor: pointer;
-        }
-
-        .work-img-container {
-            width: 100%;
-            height: 100%;
-            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-
-        .work-card:hover .work-img-container {
-            transform: scale(1.1);
-        }
-
-        .work-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0) 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 2rem;
-            color: #fff;
-            transition: background 0.3s ease;
-        }
-
-        .work-card:hover .work-overlay {
-            background: linear-gradient(to top, rgba(31, 90, 42, 0.9) 0%, rgba(31, 90, 42, 0.4) 60%, rgba(31, 90, 42, 0.2) 100%);
-        }
-
-        .work-card.small {
-            height: 250px;
-        }
-
-        .work-card.small .work-title {
-            font-size: 1.25rem;
-        }
-
-        .work-card.small .work-overlay {
-            padding: 1.5rem;
-        }
-
-        .work-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            transform: translateY(10px);
-            transition: transform 0.3s ease;
-        }
-
-        .work-card:hover .work-title {
-            transform: translateY(0);
-        }
-
-        .work-desc {
-            font-size: 0.95rem;
-            opacity: 0.85;
-            transform: translateY(10px);
-            transition: transform 0.3s ease 0.1s, opacity 0.3s ease;
-        }
-
-        .work-card:hover .work-desc {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .spacer {
-            height: 50px;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/home.css">
 </head>
 
 <body>
-    <?php include 'header.php'; ?>
-    <!-- <div class="container">
+    <div class="container">
         <header class="d-flex flex-wrap justify-content-center py-3">
             <a href="/"
                 class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
@@ -414,7 +125,7 @@
                 <li class="nav-item"><a href="about.html" class="nav-link black-text">Om oss</a></li>
             </ul>
         </header>
-    </div> -->
+    </div>
 
     <div style="background: url('maplines.png'); background-size: cover; color: #000000;" class="herodiv">
         <div class="container">
@@ -586,8 +297,7 @@
     </div>
 
     <div class="spacer"></div>
-    <?php include 'footer.php'; ?>
-    <!-- <footer class="text-center py-4">
+    <footer class="text-center py-4">
         <div class="container">
             <div class="nav-pills py-3 mb-2 border-bottom">
                 <a href="#contactUsdiv" class="nav-link d-inline-block px-3">Kontakta oss</a>
@@ -596,7 +306,7 @@
             </div>
             <p class="mb-0">&copy; ULMAP AB. 2026</p>
         </div>
-    </footer> -->
+    </footer>
 </body>
 
 </html>
