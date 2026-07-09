@@ -23,11 +23,13 @@
     <div class="about-content">
         <div class="container">
             <div id="about-info" class="about-info">
-                Vi brinner för kvalitet, långsiktiga samarbeten och hög kundnöjdhet. För oss är en nära dialog med våra kunder en självklarhet – genom ett gott samarbete skapar vi de bästa förutsättningarna för ett framgångsrikt projekt.
-Vi arbetar nära våra kunder för att förstå deras verksamhet, behov och mål. Det gör att vi kan erbjuda skräddarsydda lösningar som skapar verkligt värde. Vår verksamhet präglas av nyfikenhet, engagemang och en ständig strävan efter utveckling och förbättring.
-Företaget grundades i januari 2026 och har sitt säte i Falun. Vi är verksamma i stora delar av Sverige och erbjuder tjänster inom samhällsbyggnad och infrastruktur.
-Med mångårig erfarenhet från både konsultverksamhet och entreprenadbranschen besitter vi bred kompetens och en god förståelse för branschens krav och utmaningar. Vi har gedigen kunskap inom AMA samt kompetens inom BAS-P och BAS-U, vilket gör att vi kan bidra med både kvalitet och trygghet genom hela projektets genomförande.
+               <p>Vi brinner för kvalitet, långsiktiga samarbeten och hög kundnöjdhet. För oss är en nära dialog med våra kunder en självklarhet – genom ett gott samarbete skapar vi de bästa förutsättningarna för ett framgångsrikt projekt.</p>
 
+               <p>Vi arbetar nära våra kunder för att förstå deras verksamhet, behov och mål. Det gör att vi kan erbjuda skräddarsydda lösningar som skapar verkligt värde. Vår verksamhet präglas av nyfikenhet, engagemang och en ständig strävan efter utveckling och förbättring.</p>
+
+               <p>Företaget grundades i januari 2026 och har sitt säte i Falun. Vi är verksamma i stora delar av Sverige och erbjuder tjänster inom samhällsbyggnad och infrastruktur.</p>
+
+               <p>Med mångårig erfarenhet från både konsultverksamhet och entreprenadbranschen besitter vi bred kompetens och en god förståelse för branschens krav och utmaningar. Vi har gedigen kunskap inom AMA samt kompetens inom BAS-P och BAS-U, vilket gör att vi kan bidra med både kvalitet och trygghet genom hela projektets genomförande.</p>
             </div>
         </div>
     </div>
@@ -35,25 +37,3 @@ Med mångårig erfarenhet från både konsultverksamhet och entreprenadbranschen
 </body>
 
 </html>
-
-<script>
-async function loadabout() {
-    try {
-        const res = await fetch("https://api.ulmap.se/wp-json/wp/v2/posts/7");
-
-        if (!res.ok) throw new Error("Post not found");
-
-        const post = await res.json();
-
-        document.getElementById("about-info").innerHTML = `
-            <article>
-                ${post.content.rendered}
-            </article>
-        `;
-    } catch (err) {
-        document.getElementById("about-info").innerHTML = "<p class='text-danger'>Kunde inte ladda informationen. Försök igen senare.</p>";
-    }
-}
-
-loadabout();
-</script>
