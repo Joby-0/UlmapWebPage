@@ -7,3 +7,70 @@
     padding: var(--spacing-section-padding);
     line-height: 1.8;
 }
+
+/* Service Page Split Layout */
+.service-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 992px) {
+    .service-layout {
+        grid-template-columns: 7fr 3fr;
+        align-items: start;
+    }
+}
+
+/* 70% Card - Service Main Info */
+.service-info-card {
+    background-color: var(--bg-light);
+    border: 1px solid var(--border-light);
+    border-radius: var(--border-radius-card);
+    padding: 3rem;
+    box-shadow: var(--shadow-card);
+}
+
+@media (max-width: 768px) {
+    .service-info-card {
+        padding: 1.5rem;
+    }
+}
+
+/* 30% Card - Sidebar Contact Card */
+.service-sidebar-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--border-radius-card);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-card);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-sidebar-card h3 {
+    color: var(--ulmap-green);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.service-sidebar-card p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.service-sidebar-card .btn-contact {
+    width: 100%;
+}
+
