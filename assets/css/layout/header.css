@@ -2,6 +2,30 @@
     background-color: var(--ulmap-green);
 }
 
+.header-logo,
+.nav-link {
+    color: var(--white) !important;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link:hover {
+    color: var(--ulmap-sand) !important;
+}
+
+
+.nav-link.contact-btn {
+    background-color: var(--white) !important;
+    border: 1px solid var(--white);
+    color: var(--ulmap-green) !important;
+}
+
+.nav-link.contact-btn:hover {
+    background-color: #f4f8f1 !important;
+    border-color: #f4f8f1;
+    color: var(--ulmap-green-hover) !important;
+}
+
 .nav-item.dropdown-mega {
     position: static;
 }
@@ -10,14 +34,15 @@
     display: none;
     position: absolute;
     left: 0;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
+    top: calc(100% + 0.75rem);
+    width: 100%;
     min-height: 450px;
     background-color: var(--bg-white);
     border-bottom: 1px solid var(--border-light);
     box-shadow: var(--mega-menu-shadow);
     z-index: 1000;
     padding: 3rem 0;
+    border-radius: var(--border-radius-small);
 }
 
 .nav-item.dropdown-mega:hover .mega-menu {

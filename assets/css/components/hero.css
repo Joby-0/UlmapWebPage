@@ -5,6 +5,7 @@
     justify-content: center;
     text-align: center;
     background-color: var(--ulmap-green);
+    color: var(--white);
 }
 
 .herodiv-small {
