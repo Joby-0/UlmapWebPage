@@ -10,17 +10,28 @@
     transform: translateY(-2px);
     box-shadow: var(--shadow-button-hover);
 }
+.btn-secondary {
+    background-color: var(--ulmap-secondary);
+    border-color: var(--ulmap-secondary);
+    transition: var(--transition-base);
+}
+.btn-secondary:hover {
+    background-color: var(--ulmap-secondary);
+    border-color: var(--ulmap-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-button-hover);
+}
 
 .btn-outline-secondary {
-    color: var(--ulmap-sand);
-    border-color: var(--ulmap-sand);
+    color: var(--ulmap-secondary);
+    border-color: var(--ulmap-secondary);
     transition: var(--transition-base);
 }
 
 .btn-outline-secondary:hover {
-    background-color: var(--ulmap-sand);
+    background-color: var(--ulmap-secondary);
     color: var(--white);
-    border-color: var(--ulmap-sand);
+    border-color: var(--ulmap-secondary);
     transform: translateY(-2px);
     box-shadow: var(--shadow-button-hover);
 }
@@ -53,4 +64,11 @@
     color: var(--white);
     transform: translateY(-2px);
     box-shadow: var(--shadow-success);
+}
+
+.btn-outline-light:hover {
+    background-color: var(--white);
+    color: var(--ulmap-green);
+    border-color: var(--ulmap-green);
+    box-shadow: var(--shadow-button-hover);
 }

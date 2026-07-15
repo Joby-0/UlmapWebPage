@@ -6,3 +6,8 @@
 .whyUsdiv {
     padding: 2rem 0;
 }
+.aboutUsContainer{
+    color: var(--white);
+    background-color: var(--ulmap-green);
+    box-shadow: var(--shadow-default);
+}

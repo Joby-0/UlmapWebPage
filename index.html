@@ -16,7 +16,15 @@
         <div class="container d-flex flex-wrap justify-content-center h-100">
             <a href="/" class="header-logo d-flex align-items-center mb-md-0 me-md-auto link-body-emphasis text-decoration-none h-100">
                 <span class="fs-4 fw-bold">ULMAP</span> </a> <!-- todo make it real logo later -->
-            <ul class="nav d-flex align-items-center nav-pills h-100">
+            <button class="mobile-menu-toggle" type="button" aria-controls="mobileMenu" aria-expanded="false"
+                aria-label="Öppna meny">
+                <span class="mobile-menu-toggle-lines" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+            <ul class="nav d-flex align-items-center nav-pills h-100 desktop-nav">
                 
                 <li class="nav-item d-flex h-100 align-items-center dropdown-mega">
                     <span class="nav-link" aria-haspopup="true">
@@ -116,6 +124,55 @@
             </ul>
         </div>
     </header>
+    <div class="mobile-menu-backdrop" data-mobile-backdrop ></div>
+    <nav id="mobileMenu" class="mobile-menu" aria-label="Mobil navigering" a tabindex="-1">
+        <div class="mobile-menu-panel">
+            <div class="mobile-menu-top">
+                <span class="mobile-menu-title">ULMAP</span>
+                <button class="mobile-menu-close" type="button" aria-label="Stäng meny" data-mobile-close>
+                    <span >×</span>
+                </button>
+            </div>
+
+            <div class="mobile-menu-links">
+                <button class="mobile-accordion-trigger btn border-bottom rounded-0" type="button" aria-expanded="false"
+                    aria-controls="mobileServicesPanel" data-mobile-accordion>
+                    <span>Tjänster</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-chevron-down mobile-accordion-icon" viewBox="0 0 16 16" aria-hidden="true"
+                        focusable="false">
+                        <path fill-rule="evenodd"
+                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                    </svg>
+                </button>
+                <div id="mobileServicesPanel" class="mobile-accordion-panel " data-mobile-panel>
+                    <a href="/tjanster.html" class="mobile-menu-link mobile-menu-link-feature" data-mobile-link>Till alla tjänster</a>
+
+                    <div class="mobile-service-group">
+                        <span class="mobile-service-title">Projektledning</span>
+                        <a href="services/projektledning.html" class="mobile-menu-link" data-mobile-link>Projektledning</a>
+                    </div>
+
+                    <div class="mobile-service-group">
+                        <span class="mobile-service-title">Kartor och Visuell kommunikation</span>
+                        <a href="services/kartor-gis.html" class="mobile-menu-link" data-mobile-link>Kartor + GIS</a>
+                        <a href="services/skyltar-informationsmaterial.html" class="mobile-menu-link" data-mobile-link>Skyltar och infomationsmatrial</a>
+                        <a href="services/bocker-skrifter-for-barn.html" class="mobile-menu-link" data-mobile-link>Informationsböcker och skrifter för barn</a>
+                    </div>
+
+                    <div class="mobile-service-group border-bottom">
+                        <span class="mobile-service-title">Systemutveckling</span>
+                        <a href="services/appar-faltarbete.html" class="mobile-menu-link" data-mobile-link>Appar för fältarbeten och documation</a>
+                        <a href="services/webbplatser.html" class="mobile-menu-link" data-mobile-link>Webbplatser</a>
+                    </div>
+                </div>
+
+                <a href="projects.html" class="mobile-menu-link  border-bottom "  data-mobile-link>Projekt</a>
+                <a href="om-oss.html" class="mobile-menu-link border-bottom " data-mobile-link>Om oss</a>
+                <a href="#contactUsdiv" class="mobile-menu-link mobile-contact-btn btn "  data-mobile-link>Kontakta oss</a>
+            </div>
+        </div>
+    </nav>
 
     <div  class="herodiv">
         <div class="container">
@@ -129,8 +186,8 @@
                     hjälpa dig att lyckas med dina projekt.</p> -->
                 <div class="heroBtn">
 
-                    <a href="#contactUsdiv" class="btn btn-primary btn-lg">Kontakta oss</a>
-                    <a href="tjanster.html" class="btn btn-outline-secondary btn-lg">Läs mer</a>
+                    <a href="#contactUsdiv" class="btn btn-secondary btn-lg">Kontakta oss</a>
+                    <a href="tjanster.html" class="btn btn-outline-light btn-lg">Läs mer</a>
                 </div>
             </div>
         </div>
@@ -242,20 +299,18 @@
     </div>
     <div class="spacer"></div>
     <div class="shortAboutUs py-5">
-        <div class="container border-bottom">
+        <div class="container aboutUsContainer rounded-3 p-4">
             <div class="row align-items-center mb-5">
-                <div class="col-md-6">
-                    <h2 class="fw-bold ulmap-green-text fs-1">Om ULMAP</h2>
+                <div class="">
+                    <h2 class="fw-bold fs-1">Om ULMAP</h2>
                     <p id="about-info">
                         Vi brinner för kvalitet, långsiktiga samarbeten och hög kundnöjdhet. För oss är en nära dialog med våra kunder en självklarhet – genom ett gott samarbete skapar vi de bästa förutsättningarna för ett framgångsrikt projekt
                     </p>
                     <p>Vi arbetar nära våra kunder för att förstå deras verksamhet, behov och mål. Det gör att vi kan erbjuda skräddarsydda lösningar som skapar verkligt värde. Vår verksamhet präglas av nyfikenhet, engagemang och en ständig strävan efter utveckling och förbättring.</p>
                     <p>Med mångårig erfarenhet från både konsultverksamhet och entreprenadbranschen besitter vi bred kompetens och en god förståelse för branschens krav och utmaningar. Vi har gedigen kunskap inom AMA samt kompetens inom BAS-P och BAS-U, vilket gör att vi kan bidra med både kvalitet och trygghet genom hela projektets genomförande.</p>
-                    <p>Vi bygger även upp vår organisation med systemutveckling med en junior utvecklare med xxxx kompetens</p>
+                    <!-- <p>Vi bygger även upp vår organisation med systemutveckling med en junior utvecklare med xxxx kompetens</p> todo  -->
                 </div>
-                <div class="col-md-6">
-                    <!-- <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=600" alt="Om oss" class="img-fluid rounded"> -->
-                </div>
+
             </div>
 
         </div>
@@ -301,6 +356,127 @@
             <p class="mb-0 copyrighttext">&copy; ULMAP AB. 2026</p>
         </div>
     </footer>
+    <script>
+        (() => {
+            const body = document.body;
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            const menu = document.getElementById('mobileMenu');
+            const backdrop = document.querySelector('[data-mobile-backdrop]');
+            const closeBtn = document.querySelector('[data-mobile-close]');
+            const accordionBtn = document.querySelector('[data-mobile-accordion]');
+            const accordionPanel = document.querySelector('[data-mobile-panel]');
+            const accordionLinks = Array.from(accordionPanel.querySelectorAll('a'));
+            const focusableSelector = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+            let lastFocusedElement = null;
+
+            if (!toggle || !menu || !backdrop || !closeBtn || !accordionBtn || !accordionPanel) {
+                return;
+            }
+
+            const setAccordionLinksEnabled = (enabled) => {
+                accordionLinks.forEach((link) => {
+                    if (enabled) {
+                        link.removeAttribute('tabindex');
+                    } else {
+                        link.setAttribute('tabindex', '-1');
+                    }
+                });
+            };
+
+            const setMenuOpen = (open, restoreFocus = true) => {
+                body.classList.toggle('mobile-menu-open', open);
+                toggle.setAttribute('aria-expanded', String(open));
+                menu.setAttribute('aria-hidden', String(!open));
+                backdrop.setAttribute('aria-hidden', String(!open));
+                menu.inert = !open;
+                backdrop.inert = !open;
+
+                if (open) {
+                    lastFocusedElement = document.activeElement;
+                    const firstFocusable = menu.querySelector(focusableSelector);
+                    window.setTimeout(() => (firstFocusable || closeBtn).focus(), 0);
+                    return;
+                }
+
+                accordionBtn.setAttribute('aria-expanded', 'false');
+                accordionPanel.classList.remove('is-open');
+                accordionPanel.inert = true;
+                setAccordionLinksEnabled(false);
+
+                if (restoreFocus) {
+                    window.setTimeout(() => toggle.focus(), 0);
+                } else if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+                    lastFocusedElement = null;
+                }
+            };
+
+            const toggleMenu = () => setMenuOpen(!body.classList.contains('mobile-menu-open'));
+
+            const toggleAccordion = () => {
+                const isOpen = accordionBtn.getAttribute('aria-expanded') === 'true';
+                accordionBtn.setAttribute('aria-expanded', String(!isOpen));
+                accordionPanel.classList.toggle('is-open', !isOpen);
+                accordionPanel.inert = isOpen;
+                setAccordionLinksEnabled(!isOpen);
+            };
+
+            const handleKeydown = (event) => {
+                if (!body.classList.contains('mobile-menu-open')) {
+                    return;
+                }
+
+                if (event.key === 'Escape') {
+                    event.preventDefault();
+                    setMenuOpen(false);
+                    return;
+                }
+
+                if (event.key !== 'Tab') {
+                    return;
+                }
+
+                const focusables = Array.from(menu.querySelectorAll(focusableSelector))
+                    .filter((element) => element.offsetParent !== null);
+
+                if (focusables.length === 0) {
+                    event.preventDefault();
+                    return;
+                }
+
+                const first = focusables[0];
+                const last = focusables[focusables.length - 1];
+
+                if (event.shiftKey && document.activeElement === first) {
+                    event.preventDefault();
+                    last.focus();
+                } else if (!event.shiftKey && document.activeElement === last) {
+                    event.preventDefault();
+                    first.focus();
+                }
+            };
+
+            toggle.addEventListener('click', toggleMenu);
+            closeBtn.addEventListener('click', () => setMenuOpen(false));
+            backdrop.addEventListener('click', () => setMenuOpen(false));
+            accordionBtn.addEventListener('click', toggleAccordion);
+            menu.addEventListener('keydown', handleKeydown);
+
+            menu.querySelectorAll('[data-mobile-link]').forEach((link) => {
+                link.addEventListener('click', () => setMenuOpen(false));
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 992 && body.classList.contains('mobile-menu-open')) {
+                    setMenuOpen(false, false);
+                }
+            });
+
+            accordionPanel.inert = true;
+            setAccordionLinksEnabled(false);
+            menu.inert = true;
+            backdrop.inert = true;
+        })();
+    </script>
 </body>
 
 </html>
