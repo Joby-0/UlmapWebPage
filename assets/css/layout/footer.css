@@ -1,4 +1,8 @@
 footer {
     flex-shrink: 0;
-    background-color: var(--bg-light);
+    background-color: var(--ulmap-green);
+}
+.copyrighttext {
+    color: var(--white);
+    font-size: 0.9rem;
 }
