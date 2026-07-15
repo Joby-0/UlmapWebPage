@@ -10,7 +10,7 @@
 }
 
 .nav-link:hover {
-    color: var(--ulmap-sand) !important;
+    color: #edfae3 !important;
 }
 
 
@@ -21,8 +21,8 @@
 }
 
 .nav-link.contact-btn:hover {
-    background-color: #f4f8f1 !important;
-    border-color: #f4f8f1;
+    background-color: #edfae3 !important;
+    border-color: #edfae3;
     color: var(--ulmap-green-hover) !important;
 }
 
