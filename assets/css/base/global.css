@@ -10,12 +10,12 @@
     border-color: var(--ulmap-green) !important;
 }
 
-.ulmap-sand-text {
-    color: var(--ulmap-sand) !important;
+.ulmap-secondary-text {
+    color: var(--ulmap-secondary) !important;
 }
 
-.ulmap-sand-bg {
-    background-color: var(--ulmap-sand) !important;
+.ulmap-secondary-bg {
+    background-color: var(--ulmap-secondary) !important;
 }
 
 .white-text {

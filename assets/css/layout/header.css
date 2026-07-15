@@ -388,8 +388,8 @@ body.mobile-menu-open {
 }
 
 .group-item:hover {
-    background-color: var(--ulmap-sand-soft);
-    color: var(--ulmap-sand);
+    background-color: var(--ulmap-secondary-soft);
+    color: var(--ulmap-secondary);
 }
 
 .service-pane {
@@ -410,9 +410,9 @@ body.mobile-menu-open {
 }
 
 .service-group-wrapper:hover .group-item {
-    background-color: var(--ulmap-sand-soft);
-    color: var(--ulmap-sand);
-    box-shadow: inset 4px 0 0 var(--ulmap-sand);
+    background-color: var(--ulmap-secondary-soft);
+    color: var(--ulmap-secondary);
+    box-shadow: inset 4px 0 0 var(--ulmap-secondary);
 }
 
 @keyframes slideInRight {
@@ -444,6 +444,6 @@ h4 {
 
 .service-link:hover {
     padding-left: 10px;
-    color: var(--ulmap-sand) !important;
+    color: var(--ulmap-secondary) !important;
     background-color: var(--bg-light);
 }
