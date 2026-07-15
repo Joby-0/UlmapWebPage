@@ -7,7 +7,7 @@
     padding: 2rem 0;
 }
 .aboutUsContainer{
-    color: var(--white);
-    background-color: var(--ulmap-green);
+    color: var(--black);
+    background-color: var(--ulmap-secondary);
     box-shadow: var(--shadow-default);
 }
