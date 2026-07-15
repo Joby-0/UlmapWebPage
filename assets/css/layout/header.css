@@ -1,3 +1,7 @@
+.header{
+    background-color: var(--ulmap-green);
+}
+
 .nav-item.dropdown-mega {
     position: static;
 }
@@ -42,6 +46,7 @@
 .service-group-wrapper {
     position: static;
 }
+
 
 .group-item {
     padding: 15px 25px;
