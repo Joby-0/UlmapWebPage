@@ -17,6 +17,36 @@
     color: var(--white) !important;
 }
 
+@media (min-width: 992px) {
+    .nav-item.dropdown-mega > .nav-link {
+        gap: 0.35rem;
+    }
+
+    .header-dropdown-icon {
+        display: inline-block;
+        flex: 0 0 auto;
+        transform: translateY(0) rotate(0deg);
+        transform-origin: center;
+        transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: transform;
+        color: inherit;
+    }
+
+    .nav-item.dropdown-mega:hover > .nav-link .header-dropdown-icon,
+    .nav-item.dropdown-mega:focus-within > .nav-link .header-dropdown-icon,
+    .nav-item.dropdown-mega.show > .nav-link .header-dropdown-icon,
+    .nav-item.dropdown-mega.open > .nav-link .header-dropdown-icon,
+    .nav-item.dropdown-mega.active > .nav-link .header-dropdown-icon {
+        transform: translateY(0) rotate(180deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .header-dropdown-icon {
+        transition-duration: 1ms;
+    }
+}
+
 
 .nav-link.contact-btn {
     background-color: var(--white) !important;
