@@ -6,8 +6,6 @@
 .header-logo,
 .nav-link {
     color: var(--white) !important;
-    display: flex;
-    align-items: center;
 }
 
 .nav-link:hover {

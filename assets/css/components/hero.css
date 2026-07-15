@@ -10,11 +10,12 @@
 
 .herodiv-small {
     height: var(--spacing-small-hero-height);
-    background-color: var(--bg-light);
+    background-color: var(--ulmap-green);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    color: var(--white);
     border-bottom: 1px solid var(--border-light);
 }
 
