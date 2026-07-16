@@ -22,7 +22,7 @@ $message
     $headers .= "Reply-To: $email\r\n";
 
     if (mail($to, $subject, $body, $headers)) {
-        header("Location: thankyou.html");
+        header("Location: tack-for-meddelandet.html");
         exit;
     } else {
         echo "Fel vid skickning av meddelandet.";
