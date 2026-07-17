@@ -3,6 +3,20 @@
     border-color: var(--ulmap-green);
     transition: var(--transition-base);
 }
+.btn-outline-primary {
+    color: var(--ulmap-green);
+    border-color: var(--ulmap-green);
+}
+.btn-outline-primary:hover {
+    background-color: var(--ulmap-green);
+    color: var(--white);
+    border-color: var(--ulmap-green);
+}
+.btn.active {
+    background-color: var(--ulmap-green);
+    color: var(--white);
+    border-color: var(--ulmap-green);
+}
 
 .btn-primary:hover {
     background-color: var(--ulmap-green-hover);

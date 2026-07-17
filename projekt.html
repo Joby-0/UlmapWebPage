@@ -181,7 +181,7 @@
     </div>
 
     <div class="container">
-        <div class="last-jobs">
+        <div class="last-jobs my-5">
             <div class="text-center mb-5">
                 <h2 class="fw-bold">Senaste Uppdragen</h2>
                 <div class="ulmap-green-bg mx-auto" style="height: 4px; width: 60px; border-radius: 2px;"></div>
@@ -222,12 +222,14 @@
                 </div>
             </div>
         </div>
-
+        <h1 class="display-5 fw-bold">Alla våra projekt</h1>
+        <div class="border-bottom my-5"></div>
         <div class="filter-div">
 
             <button class="btn btn-outline-primary filter-btn" data-filter="projektledning">Projektledning</button>
             <button class="btn btn-outline-primary filter-btn" data-filter="kartor">Kartor + GIS</button>
-            <button class="btn btn-outline-primary filter-btn" data-filter="Skyltar">Skyltar och informationsmatrial</button>
+            <button class="btn btn-outline-primary filter-btn" data-filter="Skyltar">Skyltar och
+                informationsmatrial</button>
             <button class="btn btn-outline-primary filter-btn" data-filter="barn">Barnberättelser</button>
 
             <button class="btn btn-outline-primary filter-btn" data-filter="systemutveckling">Systemutveckling</button>
@@ -235,17 +237,25 @@
             <button class="btn btn-outline-primary filter-btn active" data-filter="all">Alla</button>
         </div>
         <div class="all-jobs mt-5">
+
             <div class="projects-list">
-                <article class="project-card">
+                <article data-category="barn" class="project-card">
                     <div class="project-card__media">
-                        <img src="assets/images/Expertis.png" alt="Digital transformationsplan">
+                        <a class="project-card__media-link" href="#"
+                            aria-label="Läs mer om titel">
+                            <img src="" alt="titel">
+                        </a>
                     </div>
                     <div class="project-card__content">
                         <p class="project-card__eyebrow">Completed project</p>
-                        <h3 class="project-card__title">Digital transformationsplan</h3>
+                        <h3 class="project-card__title">
+                            <a class="project-card__title-link" href="#"
+                                aria-label="Read more about Digital transformationsplan">Titel</a>
+                        </h3>
                         <p class="project-card__description">
-                            Vi tog fram en tydlig roadmap för ett konsultbolag som behövde strukturera processer,
-                            prioritera initiativ och få bättre kontroll över leveransen.
+                            Kort beskrivning av projektet. Kort beskrivning av projektet. Kort beskrivning av
+                            projektet. Kort beskrivning av projektet. Kort beskrivning av projektet. Kort
+                            beskrivning av projektet.
                         </p>
                         <div class="project-card__footer">
                             <div class="project-card__meta">Strategy • Operations • Delivery</div>
@@ -258,16 +268,23 @@
                     </div>
                 </article>
 
-                <article class="project-card">
+                <article data-category="projektledning" class="project-card">
                     <div class="project-card__media">
-                        <img src="assets/images/Bokomslag_Sverigeresan.png" alt="Projektkontor och rapportering">
+                        <a class="project-card__media-link" href="#"
+                            aria-label="exempelprojekt">
+                            <img src="" alt="exempelprojekt">
+                        </a>
                     </div>
                     <div class="project-card__content">
                         <p class="project-card__eyebrow">Completed project</p>
-                        <h3 class="project-card__title">Projektkontor och rapportering</h3>
+                        <h3 class="project-card__title">
+                            <a class="project-card__title-link" href="#"
+                                aria-label="exempelprojekt">Exempelprojekt</a>
+                        </h3>
                         <p class="project-card__description">
-                            Vi satte upp arbetssätt, mallar och uppföljning som gjorde det enklare att driva flera
-                            parallella initiativ utan att tappa tempo eller kvalitet.
+                            Kort beskrivning av projektet. Kort beskrivning av projektet. Kort beskrivning av
+                            projektet. Kort beskrivning av projektet. Kort beskrivning av projektet. Kort
+                            beskrivning av projektet.
                         </p>
                         <div class="project-card__footer">
                             <div class="project-card__meta">PMO • Reporting • Governance</div>
@@ -280,21 +297,28 @@
                     </div>
                 </article>
 
-                <article class="project-card">
+                <article data-category="kartor" class="project-card">
                     <div class="project-card__media">
-                        <img src="assets/images/kund.png" alt="Kundnära förändringsarbete">
+                        <a class="project-card__media-link" href="#"
+                            aria-label="exempelprojekt">
+                            <img src="" alt="exempelprojekt">
+                        </a>
                     </div>
                     <div class="project-card__content">
                         <p class="project-card__eyebrow">Completed project</p>
-                        <h3 class="project-card__title">Kundnära förändringsarbete</h3>
+                        <h3 class="project-card__title">
+                            <a class="project-card__title-link" href="#"
+                                aria-label="exempelprojekt">Exempelprojekt</a>
+                        </h3>
                         <p class="project-card__description">
-                            Genom nära samarbete med verksamheten förenklade vi arbetsflöden och skapade en lösning
-                            som var lätt att förstå, använda och vidareutveckla.
+                            Kort beskrivning av projektet. Kort beskrivning av projektet. Kort beskrivning av
+                            projektet. Kort beskrivning av projektet. Kort beskrivning av projektet. Kort
+                            beskrivning av projektet.
                         </p>
                         <div class="project-card__footer">
                             <div class="project-card__meta">Consulting • UX • Enablement</div>
                             <a class="project-card__link" href="#"
-                                aria-label="Read more about Kundnära förändringsarbete">
+                                aria-label="Read more about exempelprojekt">
                                 <span>Read more</span>
                                 <span class="project-card__arrow" aria-hidden="true">→</span>
                             </a>
@@ -305,6 +329,30 @@
             <div class="d-flex align-items-center justify-content-center">
 
                 <button class="btn btn-link mt-4" id="loadMoreBtn">Ladda fler projekt</button>
+            </div>
+            <div id="noProjectsMessage" class="text-center py-5" style="display: none;">
+                <h3>Inga projekt hittades</h3>
+                <p>
+                    Det finns inga projekt inom denna kategori just nu.
+                    Välj en annan kategori eller kontakta oss för mer information.
+                </p>
+            </div>
+        </div>
+
+        <div class="contact-us my-5 d-flex p-5 flex-column align-items-center text-center">
+
+            <h2 class="fw-bold mt-2">Har du ett projekt eller en idé?</h2>
+
+            <p class="contact-us-text w-50 text-start mt-3">
+                Oavsett om du behöver stöd inom projektledning, systemutveckling,
+                kartor och GIS eller digitala lösningar hjälper vi dig gärna att hitta
+                rätt väg framåt. Hör av dig så tar vi ett första, förutsättningslöst samtal.
+            </p>
+
+            <div class="mt-4">
+                <a href="/#contactUsdiv" class="btn btn-primary btn-lg">
+                    Kontakta oss
+                </a>
             </div>
         </div>
     </div>
@@ -321,5 +369,65 @@
     </footer>
 
 </body>
+<script>
+    const cards = [...document.querySelectorAll(".project-card")];
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+    const MAX_VISIBLE = 4;
+
+    let currentFilter = "all";
+    let visibleCount = MAX_VISIBLE;
+
+    function updateProjects() {
+        const filtered = cards.filter(card => {
+            if (currentFilter === "all") return true;
+
+            return card.dataset.category === currentFilter;
+        });
+        const noProjectsMessage = document.getElementById("noProjectsMessage");
+
+        cards.forEach(card => card.style.display = "none");
+
+        filtered.forEach((card, index) => {
+            if (index < visibleCount) {
+                card.style.display = "";
+            }
+        });
+
+        // Show message if no projects exist
+        if (filtered.length === 0) {
+            noProjectsMessage.style.display = "block";
+            loadMoreBtn.style.display = "none";
+        } else {
+            noProjectsMessage.style.display = "none";
+            loadMoreBtn.style.display =
+                filtered.length > visibleCount ? "inline-flex" : "none";
+        }
+    }
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+
+            filterButtons.forEach(btn =>
+                btn.classList.remove("active")
+            );
+
+            button.classList.add("active");
+
+            currentFilter = button.dataset.filter;
+            visibleCount = MAX_VISIBLE;
+
+            updateProjects();
+        });
+    });
+
+    loadMoreBtn.addEventListener("click", () => {
+        visibleCount += MAX_VISIBLE;
+        updateProjects();
+    });
+
+    updateProjects();
+</script>
 
 </html>
