@@ -118,13 +118,11 @@ body.mobile-menu-open {
     .mobile-menu-backdrop {
         display: block;
         position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.5);
+        inset: 0;        
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
         transition: opacity 300ms ease, visibility 0s linear 300ms;
-        z-index: 1040;
     }
 
     body.mobile-menu-open .mobile-menu-backdrop {
@@ -137,12 +135,12 @@ body.mobile-menu-open {
     .mobile-menu {
         display: block;
         position: fixed;
-        top: 0;
+        top: var(--header-height, 100px);
+        bottom: 0;
         right: 0;
         width: min(90vw, 420px);
-        height: 100vh;
+        height: auto;
         background: var(--ulmap-green);
-        box-shadow: -20px 0 40px rgba(0, 0, 0, 0.18);
         transform: translateX(100%);
         opacity: 0;
         visibility: hidden;
@@ -165,34 +163,6 @@ body.mobile-menu-open {
         display: flex;
         flex-direction: column;
         padding: 1.25rem 1rem 2rem;
-    }
-
-    .mobile-menu-top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 1rem;
-    }
-
-    .mobile-menu-title {
-        color: var(--white);
-        font-size: 1.1rem;
-        font-weight: 700;
-        letter-spacing: 0.02em;
-    }
-
-    .mobile-menu-close {
-        width: 44px;
-        height: 44px;
-        border: 0;
-        background: none;
-        color: var(--white);
-        font-size: 2rem;
-        line-height: 1;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
     }
 
     .mobile-menu-links {

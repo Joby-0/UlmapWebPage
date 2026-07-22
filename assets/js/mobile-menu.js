@@ -3,14 +3,14 @@
     const toggle = document.querySelector('.mobile-menu-toggle');
     const menu = document.getElementById('mobileMenu');
     const backdrop = document.querySelector('[data-mobile-backdrop]');
-    const closeBtn = document.querySelector('[data-mobile-close]');
+    const closeBtn = document.querySelector('[data-mobile-close]') || null;
     const accordionBtn = document.querySelector('[data-mobile-accordion]');
     const accordionPanel = document.querySelector('[data-mobile-panel]');
     const accordionLinks = Array.from(accordionPanel.querySelectorAll('a'));
     const focusableSelector = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
     let lastFocusedElement = null;
 
-    if (!toggle || !menu || !backdrop || !closeBtn || !accordionBtn || !accordionPanel) {
+    if (!toggle || !menu || !backdrop || !accordionBtn || !accordionPanel) {
         return;
     }
 
@@ -97,8 +97,9 @@
     };
 
     toggle.addEventListener('click', toggleMenu);
-    closeBtn.addEventListener('click', () => setMenuOpen(false));
-    backdrop.addEventListener('click', () => setMenuOpen(false));
+    if (closeBtn && closeBtn !== toggle) {
+        closeBtn.addEventListener('click', () => setMenuOpen(false));
+    }
     accordionBtn.addEventListener('click', toggleAccordion);
     menu.addEventListener('keydown', handleKeydown);
 
