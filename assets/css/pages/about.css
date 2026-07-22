@@ -1,4 +1,5 @@
 .about-content {
     padding: var(--spacing-section-padding);
     line-height: 1.8;
+    min-height: 75vh;
 }
