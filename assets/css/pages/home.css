@@ -1,3 +1,12 @@
+.hero-title{
+    font-size: 5rem;
+}
+.hero-bread{
+    font-size: 1rem;
+    width: 50%;
+    opacity: 0.8;
+}
+
 .doneWorkdiv {
     padding: var(--spacing-section-padding);
 }

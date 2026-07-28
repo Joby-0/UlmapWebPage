@@ -52,7 +52,6 @@
 
 .work-title {
     font-size: 1.5rem;
-    font-weight: 700;
     margin-bottom: 0.5rem;
     transform: translateY(10px);
     transition: var(--transition-slide);

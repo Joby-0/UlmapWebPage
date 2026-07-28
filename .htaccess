@@ -1,6 +1,14 @@
 RewriteEngine On
 
+# Remove .html from URLs
+RewriteCond %{THE_REQUEST} \s/+(.+)\.html[\s?] [NC]
+RewriteRule ^(.+)\.html$ /$1 [R=301,L]
+
+# Internally load .html files without showing .html
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{DOCUMENT_ROOT}/$1.html -f
 RewriteRule ^(.+?)/?$ $1.html [L]
+
+# Custom 404 page
+ErrorDocument 404 /404

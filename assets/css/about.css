@@ -1,3 +1,4 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css");
 @import url('base/variables.css');
 @import url('base/reset.css');
 @import url('base/typography.css');
@@ -6,3 +7,4 @@
 @import url('layout/footer.css');
 @import url('components/hero.css');
 @import url('pages/about.css');
+

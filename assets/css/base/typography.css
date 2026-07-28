@@ -1,1 +1,28 @@
 /* Global typography styles are kept intentionally minimal to preserve the existing rendering. */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --font-heading: "Roboto", sans-serif;
+    --font-body: "Inter", sans-serif;
+    --font-test: "Instrument Serif", serif;
+    --font-test2: "Bebas Neue", sans-serif;
+    --font-test3: "Anton", sans-serif;
+    --font-test4: "Atkinson Hyperlegible", sans-serif;
+
+}
+h1 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+}
+h2 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+h5, .work-title, h6,span, a,li {
+    font-family: var(--font-heading);
+    font-weight: 500;
+}
+p,   .work-desc {
+    font-family: var(--font-body);
+    font-weight: 400;
+}
