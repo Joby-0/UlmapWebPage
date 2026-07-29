@@ -15,8 +15,7 @@
 <body>
     <header class="header">
         <div class="container d-flex flex-wrap justify-content-center h-100">
-            <a href="/"
-                class="header-logo d-flex align-items-center mb-md-0 me-md-auto text-decoration-none h-100">
+            <a href="/" class="header-logo d-flex align-items-center mb-md-0 me-md-auto text-decoration-none h-100">
                 <span class="fs-4 fw-bold">ULMAP</span> </a> <!-- todo make it real logo later -->
             <button class="mobile-menu-toggle" type="button" aria-controls="mobileMenu" aria-expanded="false"
                 aria-label="Öppna meny">
@@ -150,8 +149,7 @@
 
                     <div class="mobile-service-group">
                         <span class="mobile-service-title">Projektledning</span>
-                        <a href="services/projektledning" class="mobile-menu-link"
-                            data-mobile-link>Projektledning</a>
+                        <a href="services/projektledning" class="mobile-menu-link" data-mobile-link>Projektledning</a>
                     </div>
 
                     <div class="mobile-service-group">
@@ -184,12 +182,13 @@
             <div class="heroInfo" data-reveal>
 
                 <h1 class="hero-title">Vi hittar vägen framåt</h1>
-                <p class="hero-bread">Vi hjälper företag och organisationer att förverkliga idéer genom projektledning, kartor och GIS, systemutveckling och kreativ kommunikation.</p>
+                <p class="hero-bread">Vi hjälper företag och organisationer att förverkliga idéer genom projektledning,
+                    kartor och GIS, systemutveckling och kreativ kommunikation.</p>
                 <!-- <p class="lead mb-4">Vi erbjuder expertis inom projektledning, kartor och systemutveckling för att
                     hjälpa dig att lyckas med dina projekt.</p> -->
                 <div class="heroBtn">
 
-                    <a href="#kontakt" class="btn btn-secondary btn-lg">Kontakta oss</a>
+                    <a href="/kontakta-oss" class="btn btn-secondary btn-lg">Kontakta oss</a>
                     <a href="/tjanster" class="btn btn-outline-light btn-lg">Läs mer</a>
                 </div>
             </div>
@@ -355,8 +354,8 @@
 
     <div class="spacer"></div>
     <div class="shortAboutUs py-5" data-reveal>
-        <div class="container aboutUsContainer rounded-3 p-4" data-reveal>
-            <div class="row align-items-center p-5" data-reveal>
+        <div class="container aboutUsContainer" data-reveal>
+            <div class="row align-items-center " data-reveal>
                 <div class="">
                     <h2 class="fs-1">Om ULMAP</h2>
                     <p id="about-info">
@@ -381,29 +380,15 @@
     </div>
     <div class="spacer"></div>
     <div id="kontakt" class="contact" data-reveal>
-        <div class="container text-center">
+        <div class="container contact-container text-center rounded-3 p-4">
             <h2 class="mb-4" data-reveal>Kontakta oss</h2>
-            <div class="d-block d-md-flex">
 
-                <div class="col-md-6" data-reveal>
-                    <p class="mb-4">Har du frågor eller vill diskutera ett projekt? Tveka inte att höra av dig!</p>
-                </div>
-                <div class="col-md-6" data-reveal>
-                    <form action="sendEmail.php" method="POST">
-                        <div class="mb-3">
-                            <input type="text" name="name" class="form-control" placeholder="Ditt namn" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" name="email" class="form-control" placeholder="Din e-post" required>
-                        </div>
-                        <div class="mb-3">
-                            <textarea class="form-control" name="message" rows="4" placeholder="Ditt meddelande"
-                                required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-lg">Skicka</button>
-                    </form>
-                </div>
+
+            <div class="" data-reveal>
+                <p class="mb-4">Har du frågor eller vill diskutera ett projekt? Tveka inte att höra av dig!</p>
+                <a href="/kontakta-oss" class="btn btn-secondary btn-lg">Kontakta oss</a>
             </div>
+
         </div>
 
     </div>
