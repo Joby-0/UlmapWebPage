@@ -44,3 +44,124 @@
 .services .work-card.small .work-title {
     font-size: 1.15rem;
 }
+.about-kicker {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.about-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 0.95;
+    margin-bottom: 2rem;
+}
+
+.about-heading_line {
+    display: block;
+    font-family: var(--font-heading);
+    font-weight: 400;
+    
+}
+
+.about-heading_line--small {
+    font-size: 1.5rem;
+}
+
+.about-heading_line--medium {
+    font-size: 2.5rem;
+}
+
+.about-heading_line--large {
+    font-size: 4rem;
+    color: var(--ulmap-green);
+}
+.about-lead {
+    max-width: 550px;
+    margin: 2rem 0 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.about-text {
+    line-height: 1.7;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
+.about-read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--ulmap-green);
+    font-weight: 600;
+    text-decoration: none;
+    transition: gap 0.25s ease;
+}
+
+.about-read-more span {
+    transition: transform 0.25s ease;
+}
+
+.about-read-more:hover {
+    gap: 0.8rem;
+}
+
+.about-read-more:hover span {
+    transform: translateX(3px);
+}
+
+.contact-container {
+    max-width: 850px;
+    padding: 5rem 2rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.contact-eyebrow {
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ulmap-green);
+}
+
+.contact-container h2 {
+    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 400;
+    color: var(--ulmap-green);
+}
+
+.contact-text {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--ulmap-green);
+    font-weight: 600;
+    text-decoration: none;
+    padding-bottom: 0.25rem;
+    transition: gap 0.25s ease;
+}
+
+.contact-link span {
+    transition: transform 0.25s ease;
+}
+
+.contact-link:hover {
+    gap: 0.9rem;
+}
+
+.contact-link:hover span {
+    transform: translateX(3px);
+}
