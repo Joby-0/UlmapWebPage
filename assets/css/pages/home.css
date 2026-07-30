@@ -1,10 +1,45 @@
 .hero-title{
-    font-size: 5rem;
+    font-size: clamp(3rem, 4.8vw, 5rem);
+    line-height: 1.05;
 }
 .hero-bread{
     font-size: 1rem;
-    width: 50%;
+    width: min(100%, 50rem);
     opacity: 0.8;
+}
+
+.heroInfo {
+    max-width: 760px;
+}
+
+.heroBtn {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+@media (max-width: 767.98px) {
+    .hero-title {
+        font-size: clamp(3.25rem, 7.5vw, 3rem);
+        text-align: center;
+    }
+
+    .heroInfo {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .hero-bread {
+        width: 100%;
+        max-width: 36rem;
+        margin: 0 auto 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .heroBtn {
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .doneWorkdiv {

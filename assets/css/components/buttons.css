@@ -25,27 +25,27 @@
     box-shadow: var(--shadow-button-hover);
 }
 .btn-secondary {
-    background-color: var(--ulmap-red);
-    border-color: var(--ulmap-red);
+    background-color: var(--ulmap-secondary);
+    border-color: var(--ulmap-secondary);
     transition: var(--transition-base);
 }
 .btn-secondary:hover {
-    background-color: var(--ulmap-red);
-    border-color: var(--ulmap-red);
+    background-color: var(--ulmap-secondary-hover);
+    border-color: var(--ulmap-secondary-hover);
     transform: translateY(-2px);
     box-shadow: var(--shadow-button-hover);
 }
 
 .btn-outline-secondary {
-    color: var(--ulmap-red);
-    border-color: var(--ulmap-red);
+    color: var(--ulmap-secondary);
+    border-color: var(--ulmap-secondary);
     transition: var(--transition-base);
 }
 
 .btn-outline-secondary:hover {
-    background-color: var(--ulmap-red);
+    background-color: var(--ulmap-secondary-hover);
     color: var(--white);
-    border-color: var(--ulmap-red);
+    border-color: var(--ulmap-secondary-hover);
     transform: translateY(-2px);
     box-shadow: var(--shadow-button-hover);
 }
