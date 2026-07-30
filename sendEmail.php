@@ -4,18 +4,23 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $name = htmlspecialchars(trim($_POST["name"]));
     $email = htmlspecialchars(trim($_POST["email"]));
+    $phone = htmlspecialchars(trim($_POST["phone"]));
+    $subject = htmlspecialchars(trim($_POST["subject"]));
     $message = htmlspecialchars(trim($_POST["message"]));
 
     $to = "ulrika.maars@ulmap.se";
     $subject = "Nytt meddelande från hemsidan";
 
     $body = "
-Namn: $name
+    Namn: $name
 
-E-post: $email
+    E-post: $email
+    Telefon: $phone
 
-Meddelande:
-$message
+    Ämne: $subject
+
+    Meddelande:
+    $message
 ";
 
     $headers = "From: ulrika.maars@ulmap.se\r\n";

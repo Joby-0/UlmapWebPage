@@ -22,3 +22,11 @@ jobs:
           password: ${{ secrets.SFTP_PASSWORD }}
           local_path: './'
           remote_path: './'
+          exclude: |
+            **/.git*
+            **/.github*
+            **/node_modules/**
+            **/*.md
+            README.md
+            **/partials/**
+            /assets/css/styles.css
