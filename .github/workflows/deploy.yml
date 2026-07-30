@@ -22,11 +22,11 @@ jobs:
           password: ${{ secrets.SFTP_PASSWORD }}
           local_path: './'
           remote_path: './'
-          exclude: |
-            **/.git*
-            **/.github*
-            **/node_modules/**
-            **/*.md
-            README.md
-            **/partials/**
-            /assets/css/styles.css
+          rsyncArgs: >
+            --exclude='.git/'
+            --exclude='.github/'
+            --exclude='node_modules/'
+            --exclude='*.md'
+            --exclude='.gitignore'
+            --exclude='*.yml'
+            --exclude='/assets/partials/*'
