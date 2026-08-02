@@ -6,8 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const nameInput = document.getElementById("name");
     const emailInput = document.getElementById("email");
     const phoneInput = document.getElementById("phone");
-    const areaInput = document.getElementById("area");
+    const subjectInput = document.getElementById("subject");
     const messageInput = document.getElementById("message");
+
+    if (!nameInput || !emailInput || !phoneInput || !subjectInput || !messageInput) return;
 
     function setError(input, message) {
         input.classList.add("is-invalid");
@@ -99,13 +101,13 @@ document.addEventListener("DOMContentLoaded", () => {
         return true;
     }
 
-    function validateArea() {
-        if (areaInput.value === "") {
-            setError(areaInput, "Vänligen välj ett område.");
+    function validateSubject() {
+        if (subjectInput.value === "") {
+            setError(subjectInput, "Vänligen välj ett område.");
             return false;
         }
 
-        setValid(areaInput);
+        setValid(subjectInput);
         return true;
     }
 
@@ -134,14 +136,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const isNameValid = validateName();
         const isEmailValid = validateEmail();
         const isPhoneValid = validatePhone();
-        const isAreaValid = validateArea();
+        const isSubjectValid = validateSubject();
         const isMessageValid = validateMessage();
 
         const isFormValid =
             isNameValid &&
             isEmailValid &&
             isPhoneValid &&
-            isAreaValid &&
+            isSubjectValid &&
             isMessageValid;
 
         if (!isFormValid) {
@@ -167,5 +169,5 @@ document.addEventListener("DOMContentLoaded", () => {
     phoneInput.addEventListener("input", validatePhone);
     messageInput.addEventListener("input", validateMessage);
 
-    areaInput.addEventListener("change", validateArea);
+    subjectInput.addEventListener("change", validateSubject);
 });
