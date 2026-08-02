@@ -30,3 +30,4 @@ jobs:
             --exclude='.gitignore'
             --exclude='*.yml'
             --exclude='/assets/partials/*'
+            --exclude='/assets/css/styles.css'
