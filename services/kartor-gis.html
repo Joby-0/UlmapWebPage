@@ -4,185 +4,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kartor + GIS - ULMAP</title>
+    <title>Kartor och GIS – Specialkartor & GIS-tjänster | ULMAP</title>
+
+    <meta name="description"
+        content="ULMAP erbjuder kartframställning, specialkartor och GIS-tjänster för planering, projektering och utveckling. Vi omvandlar geografisk information till tydliga och användbara kartor.">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://ulmap.se/services/kartor-gis">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Kartor och GIS – Specialkartor & GIS-tjänster | ULMAP">
+    <meta property="og:description"
+        content="ULMAP erbjuder kartframställning, specialkartor och GIS-tjänster för planering, projektering och utveckling.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ulmap.se/services/kartor-gis">
+    <meta property="og:image" content="https://ulmap.se/assets/images/og-image.jpg">
+    <meta property="og:locale" content="sv_SE">
+    <meta property="og:site_name" content="ULMAP">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/services.css">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Kartor och GIS",
+            "description": "ULMAP erbjuder kartframställning, specialkartor och GIS-tjänster för planering, projektering och utveckling.",
+            "url": "https://ulmap.se/services/kartor-gis",
+            "provider": {
+                "@type": "Organization",
+                "name": "ULMAP AB",
+                "url": "https://ulmap.se/"
+            },
+            "areaServed": {
+                "@type": "Country",
+                "name": "Sweden"
+            },
+            "serviceType": [
+                "Kartframställning",
+                "GIS",
+                "Specialkartor",
+                "Geografisk informationsanalys"
+            ]
+        }
+    </script>
 </head>
 
 <body>
-<header class="header">
-    <div class="container d-flex flex-wrap justify-content-center h-100">
-        <a href="/"
-            class="header-logo d-flex align-items-center mb-md-0 me-md-auto link-body-emphasis text-decoration-none h-100">
-            <span class="fs-4 fw-bold">ULMAP</span> </a> <!-- todo make it real logo later -->
-        <button class="mobile-menu-toggle" type="button" aria-controls="mobileMenu" aria-expanded="false"
-            aria-label="öppna meny">
-            <span class="mobile-menu-toggle-lines" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
-            </span>
-        </button>
-        <ul class="nav d-flex align-items-center nav-pills h-100 desktop-nav">
-
-            <li class="nav-item d-flex h-100 align-items-center dropdown-mega">
-                <span class="nav-link" aria-haspopup="true">
-                    Tjänster
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-chevron-down header-dropdown-icon" viewBox="0 0 16 16" aria-hidden="true"
-                        focusable="false">
-                        <path fill-rule="evenodd"
-                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
-                    </svg>
+    <header class="header">
+        <div class="container d-flex flex-wrap justify-content-center h-100">
+            <a href="/"
+                class="header-logo d-flex align-items-center mb-md-0 me-md-auto link-body-emphasis text-decoration-none h-100">
+                <span class="fs-4 fw-bold">ULMAP</span> </a> <!-- todo make it real logo later -->
+            <button class="mobile-menu-toggle" type="button" aria-controls="mobileMenu" aria-expanded="false"
+                aria-label="öppna meny">
+                <span class="mobile-menu-toggle-lines" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </span>
-                <div class="mega-menu ">
-                    <div class="container">
-                        <div class="mega-menu-content">
-                            <div class="service-groups">
-                                <div class="service-group-wrapper">
-                                    <div class="group-item">Projektledning <span>&rsaquo;</span></div>
-                                    <div class="service-pane">
-                                        <h4>Projektledning</h4>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <ul class="list-unstyled">
-                                                    <li><a href="/services/projektledning"
-                                                            class="service-link text-decoration-none py-2 px-3 d-block text-dark mb-2">Projektledning</a>
-                                                    </li>
-                                                    <!-- <li><a href="services/projektledning"
+            </button>
+            <ul class="nav d-flex align-items-center nav-pills h-100 desktop-nav">
+
+                <li class="nav-item d-flex h-100 align-items-center dropdown-mega">
+                    <span class="nav-link" aria-haspopup="true">
+                        Tjänster
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-chevron-down header-dropdown-icon" viewBox="0 0 16 16" aria-hidden="true"
+                            focusable="false">
+                            <path fill-rule="evenodd"
+                                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </span>
+                    <div class="mega-menu ">
+                        <div class="container">
+                            <div class="mega-menu-content">
+                                <div class="service-groups">
+                                    <div class="service-group-wrapper">
+                                        <div class="group-item">Projektledning <span>&rsaquo;</span></div>
+                                        <div class="service-pane">
+                                            <h4>Projektledning</h4>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <ul class="list-unstyled">
+                                                        <li><a href="/services/projektledning"
+                                                                class="service-link text-decoration-none py-2 px-3 d-block text-dark mb-2">Projektledning</a>
+                                                        </li>
+                                                        <!-- <li><a href="services/projektledning"
                                                             class="service-link text-decoration-none py-2 px-3 d-block text-dark mb-2">Mark
                                                             och Anläggning</a></li>
                                                     <li><a href="services/kartor-gis"
                                                             class="service-link text-decoration-none py-2 px-3 d-block text-dark mb-2">Kartor
                                                             och Visuell kommunikation</a></li> -->
-                                                </ul>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="service-group-wrapper">
-                                    <div class="group-item">Kartor och Visuell kommunikation <span>&rsaquo;</span>
-                                    </div>
-                                    <div class="service-pane">
-                                        <h4>Kartor och Visuell kommunikation</h4>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <ul class="list-unstyled">
-                                                    <li><a href="/services/kartor-gis"
-                                                            class="service-link text-decoration-none py-2 px-3 d-block text-dark mb-2">Kartor
-                                                            + GIS</a></li>
-                                                    <li><a href="/services/skyltar-informationsmaterial"
-                                                            class="service-link text-decoration-none py-2 px-3 d-block text-dark mb-2">Skyltar
-                                                            och infomationsmatrial</a></li>
-                                                    <li><a href="/services/bocker-skrifter-for-barn"
-                                                            class="service-link text-decoration-none py-2 px-3 d-block text-dark mb-2">Informationsböcker
-                                                            och skrifter för barn</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <ul class="list-unstyled">
-                                                    <li><a href="#"
-                                                            class="service-link text-decoration-none py-2 px-3 d-block text-dark mb-2"></a>
-                                                    </li>
-                                                    <li><a href="#"
-                                                            class="service-link text-decoration-none py-2 px-3 d-block text-dark mb-2"></a>
-                                                    </li>
-                                                </ul>
+                                    <div class="service-group-wrapper">
+                                        <div class="group-item">Kartor och Visuell kommunikation <span>&rsaquo;</span>
+                                        </div>
+                                        <div class="service-pane">
+                                            <h4>Kartor och Visuell kommunikation</h4>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <ul class="list-unstyled">
+                                                        <li><a href="/services/kartor-gis"
+                                                                class="service-link text-decoration-none py-2 px-3 d-block text-dark mb-2">Kartor
+                                                                + GIS</a></li>
+                                                        <li><a href="/services/skyltar-informationsmaterial"
+                                                                class="service-link text-decoration-none py-2 px-3 d-block text-dark mb-2">Skyltar
+                                                                och infomationsmatrial</a></li>
+                                                        <li><a href="/services/bocker-skrifter-for-barn"
+                                                                class="service-link text-decoration-none py-2 px-3 d-block text-dark mb-2">Informationsböcker
+                                                                och skrifter för barn</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <ul class="list-unstyled">
+                                                        <li><a href="#"
+                                                                class="service-link text-decoration-none py-2 px-3 d-block text-dark mb-2"></a>
+                                                        </li>
+                                                        <li><a href="#"
+                                                                class="service-link text-decoration-none py-2 px-3 d-block text-dark mb-2"></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="service-group-wrapper">
-                                    <div class="group-item">Systemutveckling <span>&rsaquo;</span></div>
-                                    <div class="service-pane">
-                                        <h4>Systemutveckling</h4>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <ul class="list-unstyled">
-                                                    <li><a href="/services/appar-faltarbete"
-                                                            class="service-link text-decoration-none py-2 px-3 d-block text-dark mb-2">Appar
-                                                            för fältarbeten och documation</a></li>
-                                                    <li><a href="/services/webbplatser"
-                                                            class="service-link text-decoration-none py-2 px-3 d-block text-dark mb-2">Webbplatser</a>
-                                                    </li>
-                                                </ul>
+                                    <div class="service-group-wrapper">
+                                        <div class="group-item">Systemutveckling <span>&rsaquo;</span></div>
+                                        <div class="service-pane">
+                                            <h4>Systemutveckling</h4>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <ul class="list-unstyled">
+                                                        <li><a href="/services/appar-faltarbete"
+                                                                class="service-link text-decoration-none py-2 px-3 d-block text-dark mb-2">Appar
+                                                                för fältarbeten och documation</a></li>
+                                                        <li><a href="/services/webbplatser"
+                                                                class="service-link text-decoration-none py-2 px-3 d-block text-dark mb-2">Webbplatser</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="service-group-wrapper mt-5">
-                                    <a href="/tjanster" class="group-item text-decoration-none text-dark">Till
-                                        alla tjänster</a>
+                                    <div class="service-group-wrapper mt-5">
+                                        <a href="/tjanster" class="group-item text-decoration-none text-dark">Till
+                                            alla tjänster</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </li>
-            <li class="nav-item"><a href="/projekt" class="nav-link h-100">Projekt</a></li>
-            <li class="nav-item"><a href="/om-oss" class="nav-link h-100">Om oss</a></li>
-            <li class="nav-item "><a href="/#contactUsdiv" class="nav-link contact-btn" aria-current="page">Kontakta
-                    oss</a></li>
-        </ul>
-    </div>
-</header>
-<div class="mobile-menu-backdrop" data-mobile-backdrop></div>
-<nav id="mobileMenu" class="mobile-menu" aria-label="Mobil navigering" a tabindex="-1">
-    <div class="mobile-menu-panel">
-        <div class="mobile-menu-links">
-            <button class="mobile-accordion-trigger btn border-bottom rounded-0" type="button" aria-expanded="false"
-                aria-controls="mobileServicesPanel" data-mobile-accordion>
-                <span>Tjänster</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-chevron-down mobile-accordion-icon" viewBox="0 0 16 16" aria-hidden="true"
-                    focusable="false">
-                    <path fill-rule="evenodd"
-                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
-                </svg>
-            </button>
-            <div id="mobileServicesPanel" class="mobile-accordion-panel " data-mobile-panel>
-                <a href="/tjanster" class="mobile-menu-link mobile-menu-link-feature" data-mobile-link>Till
-                    alla tjänster</a>
-
-                <div class="mobile-service-group">
-                    <span class="mobile-service-title">Projektledning</span>
-                    <a href="/services/projektledning" class="mobile-menu-link"
-                        data-mobile-link>Projektledning</a>
-                </div>
-
-                <div class="mobile-service-group">
-                    <span class="mobile-service-title">Kartor och Visuell kommunikation</span>
-                    <a href="/services/kartor-gis" class="mobile-menu-link" data-mobile-link>Kartor + GIS</a>
-                    <a href="/services/skyltar-informationsmaterial" class="mobile-menu-link"
-                        data-mobile-link>Skyltar och infomationsmatrial</a>
-                    <a href="/services/bocker-skrifter-for-barn" class="mobile-menu-link"
-                        data-mobile-link>Informationsböcker och skrifter för barn</a>
-                </div>
-
-                <div class="mobile-service-group border-bottom">
-                    <span class="mobile-service-title">Systemutveckling</span>
-                    <a href="/services/appar-faltarbete" class="mobile-menu-link" data-mobile-link>Appar för
-                        fältarbeten och documation</a>
-                    <a href="/services/webbplatser" class="mobile-menu-link" data-mobile-link>Webbplatser</a>
-                </div>
-            </div>
-
-            <a href="/projekt" class="mobile-menu-link  border-bottom " data-mobile-link>Projekt</a>
-            <a href="/om-oss" class="mobile-menu-link border-bottom " data-mobile-link>Om oss</a>
-            <a href="/#contactUsdiv" class="mobile-menu-link mobile-contact-btn btn " data-mobile-link>Kontakta
-                oss</a>
+                </li>
+                <li class="nav-item"><a href="/projekt" class="nav-link h-100">Projekt</a></li>
+                <li class="nav-item"><a href="/om-oss" class="nav-link h-100">Om oss</a></li>
+                <li class="nav-item "><a href="/#contactUsdiv" class="nav-link contact-btn" aria-current="page">Kontakta
+                        oss</a></li>
+            </ul>
         </div>
-    </div>
-</nav>
+    </header>
+    <div class="mobile-menu-backdrop" data-mobile-backdrop></div>
+    <nav id="mobileMenu" class="mobile-menu" aria-label="Mobil navigering" tabindex="-1">
+        <div class="mobile-menu-panel">
+            <div class="mobile-menu-links">
+                <button class="mobile-accordion-trigger btn border-bottom rounded-0" type="button" aria-expanded="false"
+                    aria-controls="mobileServicesPanel" data-mobile-accordion>
+                    <span>Tjänster</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-chevron-down mobile-accordion-icon" viewBox="0 0 16 16" aria-hidden="true"
+                        focusable="false">
+                        <path fill-rule="evenodd"
+                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                    </svg>
+                </button>
+                <div id="mobileServicesPanel" class="mobile-accordion-panel " data-mobile-panel>
+                    <a href="/tjanster" class="mobile-menu-link mobile-menu-link-feature" data-mobile-link>Till
+                        alla tjänster</a>
+
+                    <div class="mobile-service-group">
+                        <span class="mobile-service-title">Projektledning</span>
+                        <a href="/services/projektledning" class="mobile-menu-link" data-mobile-link>Projektledning</a>
+                    </div>
+
+                    <div class="mobile-service-group">
+                        <span class="mobile-service-title">Kartor och Visuell kommunikation</span>
+                        <a href="/services/kartor-gis" class="mobile-menu-link" data-mobile-link>Kartor + GIS</a>
+                        <a href="/services/skyltar-informationsmaterial" class="mobile-menu-link"
+                            data-mobile-link>Skyltar och infomationsmatrial</a>
+                        <a href="/services/bocker-skrifter-for-barn" class="mobile-menu-link"
+                            data-mobile-link>Informationsböcker och skrifter för barn</a>
+                    </div>
+
+                    <div class="mobile-service-group border-bottom">
+                        <span class="mobile-service-title">Systemutveckling</span>
+                        <a href="/services/appar-faltarbete" class="mobile-menu-link" data-mobile-link>Appar för
+                            fältarbeten och documation</a>
+                        <a href="/services/webbplatser" class="mobile-menu-link" data-mobile-link>Webbplatser</a>
+                    </div>
+                </div>
+
+                <a href="/projekt" class="mobile-menu-link  border-bottom " data-mobile-link>Projekt</a>
+                <a href="/om-oss" class="mobile-menu-link border-bottom " data-mobile-link>Om oss</a>
+                <a href="/#contactUsdiv" class="mobile-menu-link mobile-contact-btn btn " data-mobile-link>Kontakta
+                    oss</a>
+            </div>
+        </div>
+    </nav>
 
 
     <div class="herodiv-small">
         <div class="container">
-            <h1 class="display-4 fw-bold">Kartor + GIS</h1>
-            <p class="lead">Geografiska informationssystem och specialkartor för tydlig visualisering.</p>
+            <h1 class="display-4 fw-bold">Kartor och GIS</h1>
+            <p class="lead">
+                Specialkartor och GIS-lösningar för tydlig visualisering, analys och planering.
+            </p>
         </div>
     </div>
 
@@ -190,11 +232,19 @@
         <div class="container">
             <div class="service-layout">
                 <article class="service-info-card">
-                    <p>Kartor har varit en central del av vår verksamhet sedan år 2000 och är något vi brinner för. För oss är en karta mer än en visuell representation – den är ett verktyg för att kommunicera, planera och inspirera.</p>
+                    <p>Kartor har varit en central del av vår verksamhet sedan år 2000 och är något vi brinner för. För
+                        oss är en karta mer än en visuell representation – den är ett verktyg för att kommunicera,
+                        planera och inspirera.</p>
 
-                    <p>Oavsett om det handlar om att beskriva ett geografiskt område, presentera en planerad konstrunda, en vandringsled eller visualisera ett projekt, skapar vi kartor som är både informativa och estetiskt tilltalande. En välgjord karta väcker nyfikenhet, underlättar beslutsfattande och inspirerar till upptäckande.</p>
-                    
-                    <p>Kartframställning och GIS (Geografiska informationssystem) går hand i hand. Med hjälp av GIS kan vi analysera geografisk information och presentera resultaten på ett tydligt och lättförståeligt sätt genom kartor. På så vis omvandlas komplex data till ett värdefullt beslutsunderlag för planering, projektering och utveckling.</p>
+                    <p>Oavsett om det handlar om att beskriva ett geografiskt område, presentera en planerad konstrunda,
+                        en vandringsled eller visualisera ett projekt, skapar vi kartor som är både informativa och
+                        estetiskt tilltalande. En välgjord karta väcker nyfikenhet, underlättar beslutsfattande och
+                        inspirerar till upptäckande.</p>
+
+                    <p>Kartframställning och GIS (Geografiska informationssystem) går hand i hand. Med hjälp av GIS kan
+                        vi analysera geografisk information och presentera resultaten på ett tydligt och lättförståeligt
+                        sätt genom kartor. På så vis omvandlas komplex data till ett värdefullt beslutsunderlag för
+                        planering, projektering och utveckling.</p>
 
                     <div class="mt-5 text-center">
                         <a href="/tjanster" class="btn btn-outline-success">Tillbaka till alla tjänster</a>
@@ -203,25 +253,25 @@
 
                 <aside class="service-sidebar-card">
                     <h3>Kontakta oss</h3>
-                    <p>Behöver du en specialkarta eller vill du veta hur GIS kan hjälpa ditt projekt? Kontakta oss idag.</p>
+                    <p>Behöver du en specialkarta eller vill du veta hur GIS kan hjälpa ditt projekt? Kontakta oss idag.
+                    </p>
                     <a href="/#contactUsdiv" class="btn btn-primary btn-contact">Kontakta oss</a>
                 </aside>
             </div>
         </div>
     </div>
 
-<footer class="text-center py-4">
-    <div class="container">
-        <div class="nav-pills py-3 mb-2 border-bottom">
-            <a href="/#contactUsdiv" class="nav-link d-inline-block px-3">Kontakta oss</a>
-            <a href="/tjanster" class="nav-link d-inline-block px-3">Tjänster</a>
-            <a href="/om-oss" class="nav-link d-inline-block px-3">Om oss</a>
+    <footer class="text-center py-4">
+        <div class="container">
+            <div class="nav-pills py-3 mb-2 border-bottom">
+                <a href="/#contactUsdiv" class="nav-link d-inline-block px-3">Kontakta oss</a>
+                <a href="/tjanster" class="nav-link d-inline-block px-3">Tjänster</a>
+                <a href="/om-oss" class="nav-link d-inline-block px-3">Om oss</a>
+            </div>
+            <p class="mb-0 copyrighttext">&copy; ULMAP AB. 2026</p>
         </div>
-        <p class="mb-0 copyrighttext">&copy; ULMAP AB. 2026</p>
-    </div>
-</footer>
-<script src="../assets/js/mobile-menu.js" defer></script>
+    </footer>
+    <script src="../assets/js/mobile-menu.js" defer></script>
 </body>
 
 </html>
-
