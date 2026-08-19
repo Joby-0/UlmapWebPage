@@ -1,9 +1,10 @@
 :root {
     --ulmap-green: #1f5a2a;
     --ulmap-green-hover: #1f5a2a;
-    --ulmap-secondary: #6a994e;  /* 578460 */
+    --ulmap-secondary: #6a994e;
     --ulmap-secondary-hover: #5a893e;
-    --ulmap-secondary-soft: #f0f7ff;
+    --color-accent: #3B82C4;
+    --color-accent-hover: #197cd8;
     --ulmap-red: #bc4749;
     --white: #fff;
     --black: #000;

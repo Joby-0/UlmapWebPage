@@ -285,15 +285,15 @@ body.mobile-menu-open {
 
 
 .nav-link.contact-btn {
-    background-color: var(--white) !important;
-    border: 1px solid var(--white);
-    color: var(--ulmap-green) !important;
+    background-color: var(--color-accent) !important;
+    border: 1px solid var(--color-accent);
+    color: var(--white) !important;
 }
 
 .nav-link.contact-btn:hover {
-    background-color: #edfae3 !important;
-    border-color: #edfae3;
-    color: var(--ulmap-green-hover) !important;
+    background-color: var(--color-accent-hover) !important;
+    border-color: var(--color-accent-hover);
+    color: white !important;
 }
 
 .nav-item.dropdown-mega {

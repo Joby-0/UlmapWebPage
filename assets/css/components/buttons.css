@@ -25,14 +25,13 @@
     box-shadow: var(--shadow-button-hover);
 }
 .btn-secondary {
-    background-color: var(--ulmap-secondary);
-    border-color: var(--ulmap-secondary);
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
     transition: var(--transition-base);
 }
 .btn-secondary:hover {
-    background-color: var(--ulmap-secondary-hover);
-    border-color: var(--ulmap-secondary-hover);
-    transform: translateY(-2px);
+    background-color: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
     box-shadow: var(--shadow-button-hover);
 }
 
@@ -86,3 +85,4 @@
     border-color: var(--ulmap-green);
     box-shadow: var(--shadow-button-hover);
 }
+
