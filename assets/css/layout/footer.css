@@ -6,3 +6,9 @@ footer {
     color: var(--white);
     font-size: 0.9rem;
 }
+footer .nav-link {
+    color: white   !important;
+}
+footer .nav-link:hover {
+    color: white !important;
+}

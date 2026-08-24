@@ -1,22 +1,25 @@
 .header{
-    background-color: var(--ulmap-green);
+    background-color: var(--white);
     height: 100px;
     position: relative;
     z-index: 1000;
     --header-height: 100px;
+    color: black;
 }
 
-.header-logo,
+.header-logo{
+    color: var(--ulmap-green) !important;
+}
 .nav-link {
-    color: var(--white) !important;
+    color: black !important;
 }
 
 .nav-link:hover {
-    color: #edfae3 !important;
+    color: var(--ulmap-green-hover) !important;
 }
 
 .header-logo:hover {
-    color: var(--white) !important;
+    color: var(--ulmap-green-hover) !important;
 }
 
 .mobile-menu-toggle,
@@ -55,7 +58,7 @@ body.mobile-menu-open {
         height: 48px;
         border: 0;
         background: transparent;
-        color: var(--white);
+        color: black;
         border-radius: 999px;
         padding: 0;
         flex: 0 0 auto;
@@ -67,7 +70,7 @@ body.mobile-menu-open {
     .mobile-menu-close:focus-visible,
     .mobile-accordion-trigger:focus-visible,
     .mobile-menu-link:focus-visible {
-        outline: 2px solid rgba(255, 255, 255, 0.65);
+        outline: 2px solid rgba(31, 90, 42, 0.65);
         outline-offset: 3px;
     }
 
@@ -140,7 +143,7 @@ body.mobile-menu-open {
         right: 0;
         width: min(90vw, 420px);
         height: auto;
-        background: var(--ulmap-green);
+        background: var(--white);
         transform: translateX(100%);
         opacity: 0;
         visibility: hidden;
@@ -179,14 +182,15 @@ body.mobile-menu-open {
         width: 100%;
         padding: 0.95rem 1rem;
         text-decoration: none;
-        color: var(--white) !important;
+        color:black !important;
         font-weight: 500;
         transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1), background-color 300ms ease, color 300ms ease;
     }
 
     .mobile-contact-btn {
-        background: rgba(255, 255, 255, 0.94) !important;
-        color: var(--ulmap-green) !important;
+        background: var(--ulmap-green) !important;
+        border: none;
+        color: white !important;
     }
 
     .mobile-contact-btn:hover {
@@ -226,7 +230,7 @@ body.mobile-menu-open {
     }
 
     .mobile-service-title {
-        color: rgba(255, 255, 255, 0.72);
+        color: var(--ulmap-green) !important;
         font-size: 0.78rem;
         font-weight: 700;
         letter-spacing: 0.08em;
@@ -285,15 +289,15 @@ body.mobile-menu-open {
 
 
 .nav-link.contact-btn {
-    background-color: var(--color-accent) !important;
-    border: 1px solid var(--color-accent);
-    color: var(--white) !important;
+    background-color: var(--ulmap-green) !important;
+    border: 1px solid var(--ulmap-white);
+    color: white !important;
 }
 
 .nav-link.contact-btn:hover {
-    background-color: var(--color-accent-hover) !important;
-    border-color: var(--color-accent-hover);
-    color: white !important;
+    background-color: var(--ulmap-green-hover) !important;
+    border-color: var(--ulmap-green-hover);
+    color: var(--white) !important;
 }
 
 .nav-item.dropdown-mega {
@@ -307,12 +311,14 @@ body.mobile-menu-open {
     top: calc(100% );
     width: 100%;
     min-height: 450px;
-    background-color: var(--bg-white);
+    background-color: var(--bg-light);
     border-bottom: 1px solid var(--border-light);
     box-shadow: var(--mega-menu-shadow);
     z-index: 1000;
     padding: 3rem 0;
-    border-radius: var(--border-radius-small);
+    border-bottom-left-radius: var(--border-radius-small);
+    border-bottom-right-radius: var(--border-radius-small);
+
 }
 
 .nav-item.dropdown-mega:hover .mega-menu {
@@ -369,7 +375,7 @@ body.mobile-menu-open {
     right: 0;
     width: 70%;
     height: 100%;
-    background-color: var(--bg-white);
+    background-color: var(--bg-light);
     z-index: 100;
     padding-left: 3rem;
     animation: slideInRight 0.2s ease-out;
