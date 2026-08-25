@@ -364,8 +364,10 @@ body.mobile-menu-open {
 }
 
 .group-item:hover {
-    background-color: var(--ulmap-secondary-soft);
     color: var(--ulmap-secondary);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
 }
 
 .service-pane {
@@ -386,9 +388,10 @@ body.mobile-menu-open {
 }
 
 .service-group-wrapper:hover .group-item {
-    background-color: var(--ulmap-secondary-soft);
     color: var(--ulmap-secondary);
-    box-shadow: inset 4px 0 0 var(--ulmap-secondary);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
 }
 
 @keyframes slideInRight {
