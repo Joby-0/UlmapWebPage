@@ -34,10 +34,6 @@
     transition: background 0.3s ease;
 }
 
-.work-card:hover .work-overlay {
-    background: linear-gradient(to top, rgba(31, 90, 42, 0.9) 0%, rgba(31, 90, 42, 0.4) 60%, rgba(31, 90, 42, 0.2) 100%);
-}
-
 .work-card.small {
     height: 250px;
 }
