@@ -11,9 +11,26 @@
 @import url('components/hero.css');
 
 
-.form-container {
-    max-width: 940px;
-    margin-left: auto;
+
+
+.contact-form-card {
+    width: 100%;
     margin-right: auto;
-    min-height: 80vh;
+    margin-left: auto;
+    padding: 1.25rem 1.5rem;
+    row-gap: 0.5rem;
+    background-color: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--border-radius-card);
+    box-shadow: none;
+}
+
+
+
+
+@media (max-width: 575.98px) {
+    .contact-form-card {
+        width: 100%;
+        padding: 1rem;
+    }
 }
