@@ -181,95 +181,98 @@
             </div>
         </div>
     </nav>
-    <div class="container py-5">
-        <div class="row align-items-start g-5">
-            <div class="col-12 col-md-7 contact-copy">
-                <h1 class="display-4 fw-bold">Kontakta oss</h1>
-            </div>
-            <div class="col-12 col-md-5">
-                <form id="contactForm" class="contact-form-card row g-1" action="sendEmail.php" method="POST"
-                    novalidate>
+    <main>
+        <div  class="container flex-1 py-5">
+            <div class="row align-items-start g-5">
+                <div class="col-12 col-md-7 contact-copy">
+                    <h1 class="display-4 fw-bold">Kontakta oss</h1>
+                </div>
+                <div class="col-12 col-md-5">
+                    <form id="contactForm" class="contact-form-card row g-1" action="sendEmail.php" method="POST"
+                        novalidate>
 
-                    <!-- Namn -->
-                    <div class="col-12">
-                        <label for="name" class="form-label">
-                            Namn <span class="text-danger">*</span>
-                        </label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Ditt namn" required>
-                        <div class="invalid-feedback"></div>
-                    </div>
+                        <!-- Namn -->
+                        <div class="col-12">
+                            <label for="name" class="form-label">
+                                Namn <span class="text-danger">*</span>
+                            </label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Ditt namn"
+                                required>
+                            <div class="invalid-feedback"></div>
+                        </div>
 
-                    <!-- E-post -->
-                    <div class="col-12">
-                        <label for="email" class="form-label">
-                            E-post <span class="text-danger">*</span>
-                        </label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="din@email.se"
-                            required>
-                        <div class="invalid-feedback"></div>
-                    </div>
+                        <!-- E-post -->
+                        <div class="col-12">
+                            <label for="email" class="form-label">
+                                E-post <span class="text-danger">*</span>
+                            </label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="din@email.se"
+                                required>
+                            <div class="invalid-feedback"></div>
+                        </div>
 
-                    <!-- Telefon -->
-                    <div class="col-12">
-                        <label for="phone" class="form-label">
-                            Telefon
-                        </label>
-                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="070 123 45 67">
-                        <div class="invalid-feedback"></div>
-                    </div>
+                        <!-- Telefon -->
+                        <div class="col-12">
+                            <label for="phone" class="form-label">
+                                Telefon
+                            </label>
+                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="070 123 45 67">
+                            <div class="invalid-feedback"></div>
+                        </div>
 
-                    <!-- Område -->
-                    <div class="col-12">
-                        <label for="subject" class="form-label">
-                            Område <span class="text-danger">*</span>
-                        </label>
-                        <select class="form-select" id="subject" name="subject" required>
-                            <option value="" selected disabled>Välj område</option>
-                            <option value="projektledning">Projektledning</option>
-                            <option value="kartor-gis">Kartor + GIS</option>
-                            <option value="skyltar">Skyltar och informationsmaterial</option>
-                            <option value="barnberattelser">Barnberättelser</option>
-                            <option value="systemutveckling">Systemutveckling</option>
-                            <option value="appar">Appar</option>
-                            <option value="annat">Annat</option>
-                        </select>
-                        <div class="invalid-feedback"></div>
-                    </div>
+                        <!-- Område -->
+                        <div class="col-12">
+                            <label for="subject" class="form-label">
+                                Område <span class="text-danger">*</span>
+                            </label>
+                            <select class="form-select" id="subject" name="subject" required>
+                                <option value="" selected disabled>Välj område</option>
+                                <option value="projektledning">Projektledning</option>
+                                <option value="kartor-gis">Kartor + GIS</option>
+                                <option value="skyltar">Skyltar och informationsmaterial</option>
+                                <option value="barnberattelser">Barnberättelser</option>
+                                <option value="systemutveckling">Systemutveckling</option>
+                                <option value="appar">Appar</option>
+                                <option value="annat">Annat</option>
+                            </select>
+                            <div class="invalid-feedback"></div>
+                        </div>
 
-                    <!-- Meddelande -->
-                    <div class="col-12">
-                        <label for="message" class="form-label">
-                            Meddelande <span class="text-danger">*</span>
-                        </label>
-                        <textarea class="form-control" id="message" name="message" rows="6"
-                            placeholder="Berätta gärna lite om vad du behöver hjälp med..." required></textarea>
-                        <div class="invalid-feedback"></div>
-                    </div>
+                        <!-- Meddelande -->
+                        <div class="col-12">
+                            <label for="message" class="form-label">
+                                Meddelande <span class="text-danger">*</span>
+                            </label>
+                            <textarea class="form-control" id="message" name="message" rows="6"
+                                placeholder="Berätta gärna lite om vad du behöver hjälp med..." required></textarea>
+                            <div class="invalid-feedback"></div>
+                        </div>
 
-                    <!-- Skicka -->
-                    <div class="col-12 text-center">
-                        <button type="submit" class="btn btn-primary">
-                            Skicka meddelande
-                        </button>
-                    </div>
-                    <div class="col-12 text-center">
+                        <!-- Skicka -->
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-primary">
+                                Skicka meddelande
+                            </button>
+                        </div>
+                        <div class="col-12 text-center">
 
 
-                        <p class="small text-muted mt-3 mb-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-info-circle" viewBox="0 0 16 16">
-                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-                                <path
-                                    d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
-                            </svg>
-                            <span>I och med att du skickar meddelandet godkänner du vår <a href="/integritetspolicy">integritetspolicy</a>.</span>
-                        </p>
-                    </div>
+                            <p class="small text-muted mt-3 mb-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-info-circle" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                    <path
+                                        d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                                </svg>
+                                <span>När du skickar meddelandet godkänner du vår <a href="/integritetspolicy">integritetspolicy</a>.</span>
+                            </p>
+                        </div>
 
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
     <footer class="text-center py-4">
         <div class="container">
             <div class="nav-pills py-3 mb-2 border-bottom">
