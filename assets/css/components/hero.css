@@ -85,6 +85,75 @@
     margin: 0;
 }
 
+/* Reusable full-width page header.
+   Change only --hero-image when reusing this component on another page. */
+.page-hero {
+    --hero-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=85&w=2000');
+    position: relative;
+    min-height: clamp(480px, 65vw, 760px);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    isolation: isolate;
+    color: var(--white);
+    background-image: var(--hero-image);
+    background-position: center;
+    background-size:cover;
+}
+
+.page-hero::before {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    content: '';
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.42) 48%, rgba(0, 0, 0, 0.18) 100%);
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding-top: clamp(5rem, 11vw, 9rem);
+    padding-bottom: clamp(5rem, 11vw, 9rem);
+}
+
+.page-hero-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.55rem;
+    margin: 0 0 1.5rem;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.95rem;
+}
+
+.page-hero-breadcrumb a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.page-hero-breadcrumb a:hover,
+.page-hero-breadcrumb a:focus-visible {
+    text-decoration: underline;
+}
+
+.page-hero-title {
+    max-width: 48rem;
+    margin: 0;
+    color: var(--white);
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+}
+
+.page-hero-text {
+    max-width: 40rem;
+    margin: 1.5rem 0 0;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+    line-height: 1.55;
+}
+
 @media (max-width: 575.98px) {
     .services-hero-main {
         grid-template-columns: 1fr;
