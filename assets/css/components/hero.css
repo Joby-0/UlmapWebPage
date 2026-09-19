@@ -18,6 +18,102 @@
     border-bottom: 1px solid var(--border-light);
 }
 
+.services-hero {
+    min-height: calc(100vh - var(--header-height, 100px));
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    color: var(--text-dark);
+}
+
+.services-hero-main {
+    flex: 1;
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: center;
+    justify-content: center;
+}
+
+.services-hero-copy {
+    width: 100%;
+    max-width: 42rem;
+}
+
+.services-hero-eyebrow {
+    margin-bottom: 1rem;
+    color: var(--ulmap-secondary);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.services-hero-main h1 {
+    width: 100%;
+    margin-bottom: 1.25rem;
+    color: var(--ulmap-green);
+    font-size: clamp(3.5rem, 7vw, 5rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+}
+
+.services-hero-main .lead {
+    max-width: 34rem;
+    margin-bottom: 0;
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+}
+
+.services-hero-image {
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: 4 / 3;
+    background-color: #d8d8d8;
+    object-fit: cover;
+    display: block;
+}
+
+.herodiv-contact {
+    width: 100%;
+    padding: 2rem 0;
+    background-color: var(--color-accent);
+    color: var(--white);
+}
+
+.herodiv-contact h3 {
+    margin: 0;
+}
+
+@media (max-width: 575.98px) {
+    .services-hero-main {
+        grid-template-columns: 1fr;
+        align-items: stretch;
+        gap: 2.5rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    .services-hero-copy {
+        max-width: none;
+    }
+
+    .services-hero-main h1 {
+        width: 100%;
+        font-size: clamp(3rem, 14vw, 5rem);
+    }
+
+    .services-hero-image {
+        aspect-ratio: 4 / 3;
+    }
+
+    .herodiv-contact .container {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+
 .page-content {
     flex: 1 0 auto;
     padding: 80px 0;

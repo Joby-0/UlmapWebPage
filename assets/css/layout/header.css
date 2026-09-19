@@ -5,6 +5,8 @@
     z-index: 1000;
     --header-height: 100px;
     color: black;
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .header-logo{
