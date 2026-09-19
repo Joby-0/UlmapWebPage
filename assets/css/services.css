@@ -9,3 +9,9 @@
 @import url('components/cards.css');
 @import url('components/hero.css');
 @import url('pages/services.css');
+
+
+.contact-section{
+    background-color: var(--color-accent);
+    min-height: 500px;
+}
