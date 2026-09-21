@@ -217,16 +217,51 @@
     transform: translateY(-50%);
 }
 
-@media (max-width: 991.98px) {
-    .for-who {
-        margin-block: 1rem;
-    }
-
-    .for-who__content {
-        max-width: none;
-    }
+/* Project management accordion */
+.what-we-can-do_grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
 }
 
+.what-we-can-do_column {
+    display: flex;
+    flex-direction: column;
+}
 
+.what-we-can-do_accordion {
+    width: 100%;
+}
 
+@media (max-width: 767.98px) {
+    .what-we-can-do_grid {
+        grid-template-columns: 1fr;
+    }
+} 
+.what-we-can-do_collapse {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.2s ease;
+}
 
+.what-we-can-do_collapse > .accordion-body {
+    overflow: hidden;
+    min-height: 0;
+}
+
+.what-we-can-do_collapse.show {
+    grid-template-rows: 1fr;
+}
+.what-we-can-do_icon {
+    margin-left: auto;
+    font-size: 1.5rem;
+    font-weight: 300;
+    transition: transform 0.2s ease;
+}
+
+.accordion-button:not(.collapsed) .what-we-can-do_icon {
+    transform: rotate(45deg);
+}
+.what-we-can-do_collapse {
+    transition: none !important;
+}

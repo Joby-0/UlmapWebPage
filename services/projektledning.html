@@ -46,7 +46,7 @@
             "url": "https://ulmap.se/services/projektledning"
         }
     </script>
-    
+
 </head>
 
 <body>
@@ -266,94 +266,136 @@
                 </div>
             </div>
         </div>
-        <div class="what-we-can-do">
-            <h2 class="mb-5">Vad vi kan hjälpa till med</h2>
+        <section class="what-we-can-do" aria-labelledby="what-we-can-do-heading">
+            <h2 id="what-we-can-do-heading" class="mb-5">Vad vi kan hjälpa till med</h2>
+            <div class="what-we-can-do_grid">
 
-            <div class="row g-3">
+                <div class="what-we-can-do_column">
 
-                <div class="col-md-6">
-                    <div class="accordion" id="accordionOne">
+                    <!-- 1 -->
+                    <div class="accordion what-we-can-do_accordion">
                         <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingOne">
+
+                            <h3 class="accordion-header" id="project-heading-01">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne">
+                                    data-bs-target="#project-collapse-01" aria-expanded="false"
+                                    aria-controls="project-collapse-01">
+
                                     <span>Projektstyrning</span>
+                                    <span class="what-we-can-do_icon" aria-hidden="true">+</span>
+
                                 </button>
                             </h3>
 
-                            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionOne">
+                            <div id="project-collapse-01" class="accordion-collapse collapse"
+                                aria-labelledby="project-heading-01">
+
                                 <div class="accordion-body">
-                                    Vi hjälper till att skapa struktur kring projektets
-                                    mål, omfattning, tidplan och ekonomi.
+                                    Vi hjälper till att skapa struktur kring projektets mål,
+                                    omfattning, tidplan och ekonomi.
                                 </div>
+
                             </div>
+
                         </div>
                     </div>
+
+
+                    <!-- 3 -->
+                    <div class="accordion what-we-can-do_accordion">
+                        <div class="accordion-item">
+
+                            <h3 class="accordion-header" id="project-heading-03">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#project-collapse-03" aria-expanded="false"
+                                    aria-controls="project-collapse-03">
+
+                                    <span>Bygg- &amp; genomförandestöd</span>
+                                    <span class="what-we-can-do_icon" aria-hidden="true">+</span>
+
+                                </button>
+                            </h3>
+
+                            <div id="project-collapse-03" class="accordion-collapse collapse"
+                                aria-labelledby="project-heading-03">
+
+                                <div class="accordion-body">
+                                    Vi följer projektets genomförande och hjälper till att
+                                    hantera frågor och avvikelser som uppstår.
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="col-md-6">
-                    <div class="accordion" id="accordionTwo">
+
+                <div class="what-we-can-do_column">
+
+                    <!-- 2 -->
+                    <div class="accordion what-we-can-do_accordion">
                         <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingTwo">
+
+                            <h3 class="accordion-header" id="project-heading-02">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwo">
+                                    data-bs-target="#project-collapse-02" aria-expanded="false"
+                                    aria-controls="project-collapse-02">
+
                                     <span>Samordning</span>
+                                    <span class="what-we-can-do_icon" aria-hidden="true">+</span>
+
                                 </button>
                             </h3>
 
-                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionTwo">
+                            <div id="project-collapse-02" class="accordion-collapse collapse"
+                                aria-labelledby="project-heading-02">
+
                                 <div class="accordion-body">
-                                    Vi håller ihop kontakten mellan beställare,
-                                    konsulter, entreprenörer och andra aktörer.
+                                    Vi håller ihop kontakten mellan beställare, konsulter,
+                                    entreprenörer och andra aktörer.
                                 </div>
+
                             </div>
+
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-6">
-                    <div class="accordion" id="accordionThree">
+
+                    <!-- 4 -->
+                    <div class="accordion what-we-can-do_accordion">
                         <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseThree">
-                                    <span>Bygg- & genomförandestöd</span>
-                                </button>
-                            </h3>
 
-                            <div id="collapseThree" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionThree">
-                                <div class="accordion-body">
-                                    Vi följer projektets genomförande och hjälper till
-                                    att hantera frågor och avvikelser som uppstår.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="accordion" id="accordionFour">
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingFour">
+                            <h3 class="accordion-header" id="project-heading-04">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFour">
+                                    data-bs-target="#project-collapse-04" aria-expanded="false"
+                                    aria-controls="project-collapse-04">
+
                                     <span>Uppföljning</span>
+                                    <span class="what-we-can-do_icon" aria-hidden="true">+</span>
+
                                 </button>
                             </h3>
 
-                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFour">
+                            <div id="project-collapse-04" class="accordion-collapse collapse"
+                                aria-labelledby="project-heading-04">
+
                                 <div class="accordion-body">
-                                    Vi följer upp projektets ekonomi, tid, kvalitet
-                                    och framdrift.
+                                    Vi följer upp projektets ekonomi, tid, kvalitet och
+                                    framdrift.
                                 </div>
+
                             </div>
+
                         </div>
                     </div>
+
                 </div>
 
             </div>
-        </div>
+
+        </section>
         <div class="process">
             <!--svg background-->
         </div>
@@ -522,6 +564,7 @@
             <p class="mb-0 copyrighttext">&copy; ULMAP AB. 2026</p>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/mobile-menu.js" defer></script>
 </body>
 
