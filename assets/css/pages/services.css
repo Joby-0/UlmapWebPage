@@ -260,3 +260,76 @@
 .what-we-can-do_collapse .accordion-body {
     color: var(--text-muted);
 }
+
+.services-feature {
+    background-color: #1f5a2a;
+    color: #f4f1de;
+}
+
+.services-feature_label {
+    color: #a9c9a7;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.services-feature h2 {
+    max-width: 700px;
+}
+
+.services-feature_intro {
+    max-width: 650px;
+    color: rgba(244, 241, 222, 0.8);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.services-feature_grid {
+    border-top: 1px solid rgba(244, 241, 222, 0.25);
+}
+
+.services-feature_item {
+    display: flex;
+    gap: 2rem;
+    height: 100%;
+    padding: 2.5rem 2rem 2.5rem 0;
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(244, 241, 222, 0.25);
+    transition: opacity 0.2s ease;
+}
+
+
+
+.services-feature_content h3 {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
+.services-feature_content p {
+    max-width: 500px;
+    margin: 1rem 0 0;
+    color: rgba(244, 241, 222, 0.75);
+    line-height: 1.7;
+}
+
+
+
+
+@media (max-width: 767.98px) {
+
+    .services-feature_item {
+        gap: 1.25rem;
+        padding: 2rem 0;
+    }
+
+    .services-feature_number {
+        font-size: 0.75rem;
+    }
+
+    .services-feature_content h3 {
+        font-size: 1.2rem;
+    }
+
+}
