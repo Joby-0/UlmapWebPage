@@ -1,4 +1,13 @@
 (() => {
+    const header = document.querySelector('.header');
+
+    const updateHeaderState = () => {
+        header?.classList.toggle('is-scrolled', window.scrollY > 0);
+    };
+
+    updateHeaderState();
+    window.addEventListener('scroll', updateHeaderState, { passive: true });
+
     const body = document.body;
     const toggle = document.querySelector('.mobile-menu-toggle');
     const menu = document.getElementById('mobileMenu');

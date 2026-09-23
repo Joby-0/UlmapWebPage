@@ -1,16 +1,32 @@
 .header{
     background-color: var(--white);
     height: 100px;
-    position: relative;
+    position: sticky;
+    top: 0;
     z-index: 1000;
     --header-height: 100px;
     color: black;
     border-bottom: 1px solid var(--border-light);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease;
+}
+
+.header.is-scrolled {
+    background-color: var(--ulmap-green);
+    color: var(--white);
+    border-bottom-color: var(--ulmap-green);
 }
 
 .header-logo{
     color: var(--ulmap-green) !important;
+}
+
+.header.is-scrolled .header-logo,
+.header.is-scrolled .header-logo:hover,
+.header.is-scrolled .nav-link,
+.header.is-scrolled .nav-link:hover,
+.header.is-scrolled .mobile-menu-toggle {
+    color: var(--white) !important;
 }
 .nav-link {
     color: black !important;
