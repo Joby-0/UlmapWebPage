@@ -318,6 +318,18 @@ body.mobile-menu-open {
     color: var(--white) !important;
 }
 
+.nav-link.contact-btn.btn-outline-light {
+    background-color: transparent !important;
+    border-color: var(--white) !important;
+    color: var(--white) !important;
+}
+
+.nav-link.contact-btn.btn-outline-light:hover {
+    background-color: var(--white) !important;
+    border-color: var(--white) !important;
+    color: var(--ulmap-green) !important;
+}
+
 .nav-item.dropdown-mega {
     position: static;
 }

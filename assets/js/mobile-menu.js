@@ -1,8 +1,11 @@
 (() => {
     const header = document.querySelector('.header');
+    const contactButton = document.querySelector('.header .contact-btn');
 
     const updateHeaderState = () => {
-        header?.classList.toggle('is-scrolled', window.scrollY > 0);
+        const isScrolled = window.scrollY > 0;
+        header?.classList.toggle('is-scrolled', isScrolled);
+        contactButton?.classList.toggle('btn-outline-light', isScrolled);
     };
 
     updateHeaderState();
