@@ -12,3 +12,7 @@ footer .nav-link {
 footer .nav-link:hover {
     color: white !important;
 }
+.footer-img {
+    width: 100%;
+    display: block;
+}
