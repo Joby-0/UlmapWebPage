@@ -60,3 +60,6 @@ body {
 main {
     flex: 1;
 }
+.container{
+    width: 90% !important;
+}
