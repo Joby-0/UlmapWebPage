@@ -17,11 +17,6 @@
     overflow-x: clip;
 }
 
-/* The legacy article markup remains in the source for editorial reference while
-   the service pages use the shared Projektledning component system below. */
-.legacy-service-layout {
-    display: none;
-}
 
 /* Stack the contact copy and form while the desktop two-column layout is too narrow. */
 @media (max-width: 1399.98px) {
