@@ -25,6 +25,30 @@
     box-shadow: none;
 }
 
+/* Keep the copy and form readable before the desktop layout has enough room. */
+@media (max-width: 1399.98px) {
+
+
+    .contact-layout > .contact-copy,
+    .contact-layout > .contact-form-column {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .contact-copy {
+        max-width: 760px;
+    }
+
+    .contact-form-column {
+        display: flex;
+        justify-content: center;
+    }
+
+    .contact-form-card {
+        width: min(100%, 760px);
+    }
+}
+
 
 
 

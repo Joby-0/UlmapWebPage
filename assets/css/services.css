@@ -14,4 +14,40 @@
 .contact-section{
     background-color: var(--color-accent);
     min-height: 500px;
+    overflow-x: clip;
+}
+
+/* Stack the contact copy and form while the desktop two-column layout is too narrow. */
+@media (max-width: 1399.98px) {
+
+
+    .contact-section .row > [class*="col-"] {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .contact-section .row > [class*="col-"]:first-child {
+        max-width: 760px;
+    }
+
+    .contact-section .form {
+        display: flex;
+        justify-content: center;
+    }
+
+    .contact-section .form form {
+        width: min(100%, 760px);
+    }
+
+    .contact-section h1 {
+        font-size: clamp(2.75rem, 6vw, 4.5rem);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .contact-section h1 {
+        max-width: 100%;
+        font-size: clamp(2rem, 9vw, 3rem);
+        line-height: 1.05;
+    }
 }
