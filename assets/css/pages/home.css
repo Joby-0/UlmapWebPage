@@ -6,6 +6,7 @@
 @import url('../components/buttons.css');
 @import url('../components/cards.css');
 @import url('../components/hero.css');
+@import url('../components/kontakt-section.css');
 
 .hero-title{
     font-size: clamp(3rem, 4.8vw, 5rem);

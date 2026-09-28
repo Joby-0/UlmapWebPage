@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="sv">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -227,14 +228,14 @@
     </div>
 
     <!-- <div class="spacer"></div>
-    <div class="doneWorkdiv" data-reveal>
-        <div class="container">
-            <div class="text-center mb-5" data-reveal>
-                <h2 class="fw-bold">Senaste Uppdragen</h2>
-                <div class="ulmap-green-bg mx-auto" style="height: 4px; width: 60px; border-radius: 2px;"></div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6" data-reveal>
+            <div class="doneWorkdiv" data-reveal>
+                <div class="container">
+                    <div class="text-center mb-5" data-reveal>
+                        <h2 class="fw-bold">Senaste Uppdragen</h2>
+                        <div class="ulmap-green-bg mx-auto" style="height: 4px; width: 60px; border-radius: 2px;"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6" data-reveal>
                     <div class="work-card">
                         <div class="work-img-container" style="background: url('') center/cover no-repeat;">
                         </div>
@@ -426,32 +427,91 @@
     </div>
 
     <div class="spacer"></div>
-    <div id="kontakt" class="contact" data-reveal>
-        <div class="container contact-container text-center rounded-3 p-5">
-            <p class="contact-eyebrow">Har du ett projekt i åtanke?</p>
-
-            <h2>Vi hör gärna från dig.</h2>
-
-            <p class="contact-text">
-                Har du en idé, en fråga eller ett projekt du vill diskutera?
-                Hör gärna av dig så tar vi nästa steg tillsammans.
-            </p>
-
-            <a href="/kontakta-oss" class="btn btn-secondary btn-lg">
-                Kontakta oss
-            </a>
-        </div>
-
-    </div>
 
     <div class="spacer"></div>
-    <footer class="text-center py-4">
+    <section class="contact-section">
         <div class="container">
-            <div class="nav-pills py-3 mb-2 border-bottom">
-                <a href="/kontakt-oss" class="nav-link d-inline-block px-3">Kontakta oss</a>
-                <a href="tjanster" class="nav-link d-inline-block px-3">Tjänster</a>
-                <a href="om-oss" class="nav-link d-inline-block px-3">Om oss</a>
+            <div class="row py-5">
+                <div class="col-12 col-lg-7">
+                    <h1 class="display-1 text-white fw-bold">Vi hör gärna från dig.</h1>
+                    <p class="text-white lead mt-3"> Har du en idé, en fråga eller ett projekt du vill diskutera?
+                Hör gärna av dig så tar vi nästa steg tillsammans.</p>
+                </div>
+                <div class="col-12 col-lg-5 form">
+                    <form id="contactForm" class="bg-white rounded-3 shadow p-4 row g-3" action="sendEmail.php"
+                        method="POST" novalidate>
+                        <div class="col-12">
+                            <label for="name" class="form-label">Namn <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Ditt namn"
+                                required>
+                            <div class="invalid-feedback"></div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="email" class="form-label">E-post <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="din@email.se"
+                                required>
+                            <div class="invalid-feedback"></div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="phone" class="form-label">Telefon</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="070 123 45 67">
+                            <div class="invalid-feedback"></div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="subject" class="form-label">Område <span class="text-danger">*</span></label>
+                            <select class="form-select" id="subject" name="subject" required>
+                                <option value="" selected disabled>Välj område</option>
+                                <option value="projektledning">Projektledning</option>
+                                <option value="kartor-gis">Kartor + GIS</option>
+                                <option value="skyltar">Skyltar och informationsmaterial</option>
+                                <option value="barnberattelser">Barnberättelser</option>
+                                <option value="systemutveckling">Systemutveckling</option>
+                                <option value="appar">Appar</option>
+                                <option value="annat">Annat</option>
+                            </select>
+                            <div class="invalid-feedback"></div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="message" class="form-label">Meddelande <span
+                                    class="text-danger">*</span></label>
+                            <textarea class="form-control" id="message" name="message" rows="6"
+                                placeholder="Berätta gärna lite om vad du behöver hjälp med..." required></textarea>
+                            <div class="invalid-feedback"></div>
+                        </div>
+
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Skicka</button>
+                        </div>
+
+                        <div class="col-12 text-center">
+                            <p class="small text-muted mt-2 mb-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-info-circle" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                    <path
+                                        d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                                </svg>
+                                När du skickar meddelandet godkänner du vår
+                                <a href="/integritetspolicy">integritetspolicy</a>.
+                            </p>
+                        </div>
+                    </form>
+                </div>
             </div>
+        </div>
+
+    </section>
+
+    <footer class="text-center"><img class="footer-img" src="../assets/images/treefooter.svg" alt="">
+        <div class="container py-5">
+            <div class="nav-pills py-3 mb-2 border-bottom"><a href="/kontakta-oss"
+                    class="nav-link d-inline-block px-3">Kontakta oss</a><a href="/tjanster"
+                    class="nav-link d-inline-block px-3">Tjänster</a><a href="/om-oss"
+                    class="nav-link d-inline-block px-3">Om oss</a></div>
             <p class="mb-0 copyrighttext">&copy; ULMAP AB. 2026</p>
         </div>
     </footer>
