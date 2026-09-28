@@ -32,6 +32,12 @@
     </url>
 
     <url>
+        <loc>https://ulmap.se/integritetspolicy</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+
+    <url>
         <loc>https://ulmap.se/services/projektledning</loc>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>

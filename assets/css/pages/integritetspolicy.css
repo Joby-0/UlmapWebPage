@@ -1,0 +1,16 @@
+@import url('../variables.css');
+@import url('../global.css');
+@import url('../typography.css');
+@import url('../layout/header.css');
+@import url('../layout/footer.css');
+@import url('../components/buttons.css');
+@import url('../components/hero.css');
+
+body {
+    background-color: var(--bg-white);
+    font-family: var(--font-family-base);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
