@@ -61,5 +61,5 @@ main {
     flex: 1;
 }
 .container{
-    width: 90% !important;
+    min-width: 70% !important;
 }

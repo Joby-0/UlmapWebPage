@@ -53,6 +53,12 @@
 
 
 @media (max-width: 575.98px) {
+    .contact-copy h2 {
+        font-size: clamp(2rem, 9vw, 2.75rem);
+        line-height: 1.05;
+        overflow-wrap: anywhere;
+    }
+
     .contact-form-card {
         width: 100%;
         padding: 1rem;
