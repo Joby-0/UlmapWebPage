@@ -1,0 +1,44 @@
+/* Project management accordion */
+.what-we-can-do_accordion .accordion-item {
+    border: 0;
+    background-color: transparent;
+}
+
+.what-we-can-do_accordion .accordion-button {
+    color: var(--text-dark);
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.what-we-can-do_accordion .accordion-button::after {
+    display: none;
+}
+
+.what-we-can-do_accordion .accordion-button:not(.collapsed) {
+    color: var(--text-dark);
+    background-color: transparent;
+}
+
+.what-we-can-do_accordion .accordion-button:focus-visible {
+    outline: 2px solid #1f5a2a;
+    outline-offset: 4px;
+}
+
+.what-we-can-do_icon {
+    margin-left: auto;
+    color: #1f5a2a;
+    font-size: 1.75rem;
+    font-weight: 400;
+    line-height: 1;
+    transition: transform 200ms ease;
+}
+
+.what-we-can-do_accordion .accordion-button:not(.collapsed) .what-we-can-do_icon {
+    transform: rotate(45deg);
+}
+
+
+.what-we-can-do_collapse .accordion-body {
+    color: var(--text-muted);
+}
+

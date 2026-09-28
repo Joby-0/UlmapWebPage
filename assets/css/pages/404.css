@@ -1,0 +1,7 @@
+@import url('../variables.css');
+@import url('../global.css');
+@import url('../typography.css');
+@import url('../layout/header.css');
+@import url('../layout/footer.css');
+@import url('../components/hero.css');
+@import url('../components/buttons.css');

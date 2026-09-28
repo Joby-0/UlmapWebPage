@@ -1,1 +1,59 @@
-/* Placeholder for contact page styles. */
+@import url('../variables.css');
+@import url('../global.css');
+@import url('../typography.css');
+@import url('../layout/header.css');
+@import url('../layout/footer.css');
+@import url('../components/buttons.css');
+@import url('../components/cards.css');
+@import url('../components/hero.css');
+
+.contact-form-card {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 1.25rem 1.5rem;
+    row-gap: 0.5rem;
+    background-color: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--border-radius-card);
+    box-shadow: none;
+}
+/* Keep the copy and form readable before the desktop layout has enough room. */
+@media (max-width: 1399.98px) {
+
+
+    .contact-layout > .contact-copy,
+    .contact-layout > .contact-form-column {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .contact-copy {
+        max-width: 760px;
+    }
+
+    .contact-form-column {
+        display: flex;
+        justify-content: center;
+    }
+
+    .contact-form-card {
+        width: min(100%, 760px);
+    }
+}
+
+
+
+
+@media (max-width: 575.98px) {
+    .contact-copy h2 {
+        font-size: clamp(2rem, 9vw, 2.75rem);
+        line-height: 1.05;
+        overflow-wrap: anywhere;
+    }
+
+    .contact-form-card {
+        width: 100%;
+        padding: 1rem;
+    }
+}
