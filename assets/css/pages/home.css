@@ -9,12 +9,12 @@
 @import url('../components/kontakt-section.css');
 
 .hero-title{
-    font-size: clamp(3rem, 4.8vw, 5rem);
+    font-size: clamp(3rem, 4.8vw, 7rem);
     line-height: 1.05;
 }
 .hero-bread{
-    font-size: 1rem;
-    width: min(100%, 50rem);
+    font-size: 1.5rem;
+    width: min(100%, 100rem);
     opacity: 0.8;
 }
 
