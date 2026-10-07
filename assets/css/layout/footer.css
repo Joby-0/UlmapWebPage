@@ -1,6 +1,7 @@
 footer {
     flex-shrink: 0;
     background-color: var(--ulmap-green);
+    overflow: hidden;
 }
 .copyrighttext {
     color: var(--white);
@@ -10,9 +11,6 @@ footer .nav-link {
     color: white   !important;
 }
 footer .nav-link:hover {
-    color: white !important;
-}
-.footer-img {
-    width: 100%;
-    display: block;
+    color: var(--white) !important;
+    text-decoration: underline;
 }
