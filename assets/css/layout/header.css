@@ -394,7 +394,7 @@ body.mobile-menu-open {
 }
 
 .group-item:hover {
-    color: var(--ulmap-secondary);
+    color: var(--ulmap-green);
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;
@@ -418,7 +418,7 @@ body.mobile-menu-open {
 }
 
 .service-group-wrapper:hover .group-item {
-    color: var(--ulmap-secondary);
+    color: var(--ulmap-green);
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;
@@ -453,6 +453,6 @@ h4 {
 
 .service-link:hover {
     padding-left: 10px;
-    color: var(--ulmap-secondary) !important;
+    color: var(--ulmap-green) !important;
     background-color: var(--bg-light);
 }

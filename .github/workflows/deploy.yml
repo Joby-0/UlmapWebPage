@@ -35,5 +35,7 @@ jobs:
               --exclude-glob '*.md' \
               --exclude-glob '.gitignore' \
               --exclude-glob '*.yml' \
+              --exclude-glob '/assets/partials/*' \
+
               ./ ./
           "
