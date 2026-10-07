@@ -13,23 +13,27 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Deploy via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.5
-        with:
-          username: ${{ secrets.SFTP_USERNAME }}
-          server: ${{ secrets.SFTP_HOST }}
-          port: ${{ secrets.SFTP_PORT }}
-          password: ${{ secrets.SFTP_PASSWORD }}
-          local_path: './'
-          remote_path: './'
-          sftp_only: true
-          delete_remote_files: false
-          rsyncArgs: >
-            --exclude='.git/'
-            --exclude='.github/'
-            --exclude='node_modules/'
-            --exclude='*.md'
-            --exclude='.gitignore'
-            --exclude='*.yml'
-            --exclude='/assets/partials/*'
-            --exclude='/assets/css/styles.css'
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Deploy to STRATO
+        env:
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+          SFTP_PORT: ${{ secrets.SFTP_PORT }}
+          SFTP_USERNAME: ${{ secrets.SFTP_USERNAME }}
+          SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
+        run: |
+          lftp -c "
+            set sftp:auto-confirm yes;
+            set sftp:connect-program 'ssh -a -x -o StrictHostKeyChecking=no';
+            open -u '$SFTP_USERNAME','$SFTP_PASSWORD' sftp://$SFTP_HOST:$SFTP_PORT;
+            mirror -R \
+              --verbose \
+              --exclude-glob .git/ \
+              --exclude-glob .github/ \
+              --exclude-glob node_modules/ \
+              --exclude-glob '*.md' \
+              --exclude-glob '.gitignore' \
+              --exclude-glob '*.yml' \
+              ./ ./
+          "
