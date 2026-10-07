@@ -1,9 +1,9 @@
-@import url('../variables.css');
-@import url('../global.css');
-@import url('../typography.css');
-@import url('../layout/header.css');
-@import url('../layout/footer.css');
-@import url('../components/hero.css');
+@import url('../variables.css?v=VERSION');
+@import url('../global.css?v=VERSION');
+@import url('../typography.css?v=VERSION');
+@import url('../layout/header.css?v=VERSION');
+@import url('../layout/footer.css?v=VERSION');
+@import url('../components/hero.css?v=VERSION');
 
 body {
     background-color: var(--bg-off-white);

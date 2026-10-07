@@ -1,11 +1,11 @@
-@import url('../variables.css');
-@import url('../global.css');
-@import url('../typography.css');
-@import url('../layout/header.css');
-@import url('../layout/footer.css');
-@import url('../components/buttons.css');
-@import url('../components/cards.css');
-@import url('../components/hero.css');
+@import url('../variables.css?v=VERSION');
+@import url('../global.css?v=VERSION');
+@import url('../typography.css?v=VERSION');
+@import url('../layout/header.css?v=VERSION');
+@import url('../layout/footer.css?v=VERSION');
+@import url('../components/buttons.css?v=VERSION');
+@import url('../components/cards.css?v=VERSION');
+@import url('../components/hero.css?v=VERSION');
 
 .contact-form-card {
     width: 100%;
