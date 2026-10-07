@@ -34,20 +34,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $to = "ulrika.maars@ulmap.se";
     $mailSubject = "Nytt meddelande från hemsidan";
 
-    $body = "
-    Namn: " . htmlspecialchars($name, ENT_QUOTES, 'UTF-8') . "
+    $body =
+        "Namn: " . $name . "\n\n" .
+        "E-post: " . $email . "\n" .
+        "Telefon: " . $phone . "\n\n" .
+        "Ämne: " . $subject . "\n\n" .
+        "Meddelande:\n" . $message . "\n";
 
-    E-post: " . htmlspecialchars($email, ENT_QUOTES, 'UTF-8') . "
-    Telefon: " . htmlspecialchars($phone, ENT_QUOTES, 'UTF-8') . "
-
-    Ämne: " . htmlspecialchars($subject, ENT_QUOTES, 'UTF-8') . "
-
-    Meddelande:
-    " . htmlspecialchars($message, ENT_QUOTES, 'UTF-8') . "
-";
-
-    $headers = "From: ulrika.maars@ulmap.se\r\n";
-    $headers .= "Reply-To: $email\r\n";
+    $headers = "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    $headers .= "Content-Transfer-Encoding: 8bit\r\n";
+    $headers .= "From: ulrika.maars@ulmap.se\r\n";
+    $headers .= "Reply-To: " . $email . "\r\n";
 
     if (mail($to, $mailSubject, $body, $headers)) {
         header("Location: tack-for-meddelandet");
