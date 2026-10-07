@@ -13,6 +13,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Add cache version
+        run: |
+          VERSION=$(git rev-parse --short HEAD)
+
+          echo "Using cache version: $VERSION"
+
+          find . -type f \( -name "*.html" -o -name "*.css" \) -print0 | while IFS= read -r -d '' file; do
+            sed -i "s/?v=VERSION/?v=$VERSION/g" "$file"
+          done
+
       - name: Install lftp
         run: sudo apt-get update && sudo apt-get install -y lftp
 
@@ -27,6 +37,7 @@ jobs:
             set sftp:auto-confirm yes;
             set sftp:connect-program 'ssh -a -x -o StrictHostKeyChecking=no';
             open -u '$SFTP_USERNAME','$SFTP_PASSWORD' sftp://$SFTP_HOST:$SFTP_PORT;
+
             mirror -R \
               --verbose \
               --exclude-glob .git/ \
@@ -35,7 +46,6 @@ jobs:
               --exclude-glob '*.md' \
               --exclude-glob '.gitignore' \
               --exclude-glob '*.yml' \
-              --exclude-glob '/assets/partials/*' \
-
+              --exclude-glob 'assets/partials/*' \
               ./ ./
           "
