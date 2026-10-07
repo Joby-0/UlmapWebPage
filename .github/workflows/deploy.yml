@@ -22,6 +22,8 @@ jobs:
           password: ${{ secrets.SFTP_PASSWORD }}
           local_path: './'
           remote_path: './'
+          sftp_only: true
+          delete_remote_files: false
           rsyncArgs: >
             --exclude='.git/'
             --exclude='.github/'
