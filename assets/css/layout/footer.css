@@ -1,6 +1,6 @@
 footer {
     flex-shrink: 0;
-    background-color: var(--ulmap-green);
+    background-color: var(--color-accent);
     overflow: hidden;
 }
 .copyrighttext {
