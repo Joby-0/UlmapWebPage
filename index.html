@@ -500,8 +500,12 @@
                         Hör gärna av dig så tar vi nästa steg tillsammans.</p>
                 </div>
                 <div class="col-12 col-lg-5 form">
-                    <form id="contactForm" class="bg-white rounded-3 shadow p-4 row g-3" action="/sendEmail.php"
+                    <form id="contactForm" class="bg-white rounded-3 shadow p-4 row g-3" action="/contact.php"
                         method="POST" novalidate>
+                        <div style="position:absolute; left:-9999px;" aria-hidden="true">
+                           <label for="website">Lämna detta fält tomt</label>
+                           <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                        </div>
                         <div class="col-12">
                             <label for="name" class="form-label">Namn <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="name" name="name" placeholder="Ditt namn"

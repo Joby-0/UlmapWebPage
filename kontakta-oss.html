@@ -199,8 +199,12 @@
                     </ul>
                 </div>
                 <div class="col-12 col-md-5 contact-form-column">
-                    <form id="contactForm" class="contact-form-card row g-1" action="/sendEmail.php" method="POST"
+                    <form id="contactForm" class="contact-form-card row g-1" action="/contact.php" method="POST"
                         novalidate>
+                        <div style="position:absolute; left:-9999px;" aria-hidden="true">
+                            <label for="website">Lämna detta fält tomt</label>
+                            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                        </div>
 
                         <!-- Namn -->
                         <div class="col-12">
