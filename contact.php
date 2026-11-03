@@ -1,18 +1,16 @@
 <?php
+
+ini_set('log_errors', '1');
+ini_set('error_reporting', (string) E_ALL);
+ini_set('error_log', __DIR__ . '/../private/php-error.log');
+
+error_log('========== CONTACT FORM STARTED ==========');
+
+require_once __DIR__ . '/config.php';
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-?>
-<?php
 
-ini_set('log_errors', '1');
-error_reporting(E_ALL);
-
-require_once __DIR__ . '/config.php';
-
-echo 'Config loaded successfully';
-exit;
-<?php
 require_once __DIR__ . '/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
