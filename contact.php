@@ -1,4 +1,13 @@
 <?php
+
+ini_set('log_errors', '1');
+error_reporting(E_ALL);
+
+require_once __DIR__ . '/config.php';
+
+echo 'Config loaded successfully';
+exit;
+<?php
 require_once __DIR__ . '/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
