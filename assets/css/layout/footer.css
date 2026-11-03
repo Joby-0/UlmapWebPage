@@ -3,6 +3,9 @@ footer {
     background-color: var(--color-accent);
     overflow: hidden;
 }
+footer.footer--green {
+    background-color: var(--ulmap-green);
+}
 .copyrighttext {
     color: var(--white);
     font-size: 0.9rem;
