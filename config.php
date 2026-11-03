@@ -180,6 +180,7 @@ function renderPage(string $title, string $content): void
 function sendEmail(string $to, string $subject, string $body, ?string $replyTo = null
 ): bool {
     try {
+        error_log('[ULMAP] Sending email to ' . $to . ' with subject: ' . $subject);
         $settings = require __DIR__ . '/../private/mail-config.php';
 
         $resend = Resend::client($settings['api_key']);
