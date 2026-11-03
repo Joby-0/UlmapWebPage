@@ -41,3 +41,4 @@ wordpress/wp-content/languages/
 
 #private
 /private/
+/vendor/

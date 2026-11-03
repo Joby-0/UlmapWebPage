@@ -124,11 +124,11 @@ try {
         'Reply-To: ' . $data['email']
     ];
 
-    $sent = mail(
+    $sent = sendEmail(
         CONTACT_EMAIL,
         'Nytt meddelande från hemsidan',
         $body,
-        implode("\r\n", $headers)
+        $data['email']
     );
 
     if (!$sent) {

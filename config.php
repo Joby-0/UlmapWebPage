@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+require_once __DIR__ . '/../private/vendor/autoload.php';
 
 const SITE_URL = 'https://ulmap.se';
 const CONTACT_EMAIL = 'ulrika.maars@ulmap.se';
@@ -125,4 +126,31 @@ function renderPage(string $title, string $content): void
         </main>
     </body>
     </html>';
+}
+function sendEmail(string $to, string $subject, string $body, ?string $replyTo = null
+): bool {
+    try {
+        $settings = require __DIR__ . '/../private/mail-config.php';
+
+        $resend = Resend::client($settings['api_key']);
+
+        $email = [
+            'from' => MAIL_FROM,
+            'to' => [$to],
+            'subject' => $subject,
+            'text' => $body,
+        ];
+
+        if ($replyTo !== null) {
+            $email['reply_to'] = $replyTo;
+        }
+
+        $resend->emails->send($email);
+
+        return true;
+
+    } catch (Throwable $e) {
+        error_log('Resend email error: ' . $e->getMessage());
+        return false;
+    }
 }
