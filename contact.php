@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 try {
     initializeStorage();
 } catch (Throwable $e) {
-    error_log($e->getMessage());
+    logApplicationError('Initializing contact form storage', $e);
     http_response_code(500);
     exit('Ett tekniskt fel uppstod. Försök igen senare.');
 }
@@ -94,37 +94,50 @@ try {
         exit;
     }
 } catch (Throwable $e) {
-    error_log($e->getMessage());
+    logApplicationError('Applying contact form rate limit', $e);
     http_response_code(500);
     exit('Ett tekniskt fel uppstod.');
 }
 
-// Generate secure verification token
-$token = bin2hex(random_bytes(32));
-$tokenHash = hash('sha256', $token);
+try {
+    // Generate secure verification token
+    $token = bin2hex(random_bytes(32));
+    $tokenHash = hash('sha256', $token);
 
-$pendingFile = STORAGE_DIR . '/pending/' . $tokenHash . '.json';
+    $pendingFile = STORAGE_DIR . '/pending/' . $tokenHash . '.json';
 
-$data = [
-    'name' => $name,
-    'email' => $email,
-    'phone' => $phone,
-    'subject' => $subject,
-    'message' => $message,
-    'created_at' => time(),
-    'expires_at' => time() + TOKEN_LIFETIME
-];
+    $data = [
+        'name' => $name,
+        'email' => $email,
+        'phone' => $phone,
+        'subject' => $subject,
+        'message' => $message,
+        'created_at' => time(),
+        'expires_at' => time() + TOKEN_LIFETIME
+    ];
 
-if (file_put_contents(
-    $pendingFile,
-    json_encode($data, JSON_UNESCAPED_UNICODE),
-    LOCK_EX
-) === false) {
+    $encodedData = json_encode($data, JSON_UNESCAPED_UNICODE);
+    if ($encodedData === false) {
+        throw new RuntimeException(
+            'Could not encode pending contact submission: ' . json_last_error_msg()
+        );
+    }
+
+    if (file_put_contents($pendingFile, $encodedData, LOCK_EX) === false) {
+        throw new RuntimeException('Could not write pending contact submission.');
+    }
+
+    if (!chmod($pendingFile, 0600)) {
+        throw new RuntimeException('Could not restrict permissions on pending contact submission.');
+    }
+} catch (Throwable $e) {
+    logApplicationError('Saving pending contact submission', $e);
+    if (isset($pendingFile) && is_file($pendingFile) && !@unlink($pendingFile)) {
+        error_log('[ULMAP] Could not remove incomplete pending contact submission.');
+    }
     http_response_code(500);
     exit('Kunde inte spara meddelandet.');
 }
-
-chmod($pendingFile, 0600);
 
 // Create confirmation link
 $confirmationLink = SITE_URL . '/confirm.php?token=' . $token;

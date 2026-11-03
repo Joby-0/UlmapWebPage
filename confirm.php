@@ -4,7 +4,7 @@ require_once __DIR__ . '/config.php';
 try {
     initializeStorage();
 } catch (Throwable $e) {
-    error_log($e->getMessage());
+    logApplicationError('Initializing confirmation storage', $e);
     http_response_code(500);
     exit('Ett tekniskt fel uppstod.');
 }
@@ -38,10 +38,22 @@ if (!is_file($file)) {
 
 // GET: Show confirmation button
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $data = json_decode(file_get_contents($file), true);
+    $contents = file_get_contents($file);
+    if ($contents === false) {
+        error_log('[ULMAP] Could not read pending confirmation file.');
+        http_response_code(500);
+        renderPage(
+            'Kunde inte läsa meddelandet',
+            '<p>Ett tekniskt fel uppstod. Försök igen senare.</p>'
+        );
+        exit;
+    }
+
+    $data = json_decode($contents, true);
 
     if (
         !is_array($data) ||
+        json_last_error() !== JSON_ERROR_NONE ||
         !isset($data['expires_at']) ||
         $data['expires_at'] < time()
     ) {
@@ -75,22 +87,35 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit('Method not allowed.');
 }
 
-$handle = fopen($file, 'rb');
+$handle = fopen($file, 'r+b');
 
 if ($handle === false || !flock($handle, LOCK_EX)) {
     if (is_resource($handle)) {
         fclose($handle);
     }
 
+    error_log('[ULMAP] Could not open or lock pending confirmation file.');
     http_response_code(500);
     exit('Kunde inte verifiera meddelandet.');
 }
 
 try {
-    $data = json_decode(stream_get_contents($handle), true);
+    $contents = stream_get_contents($handle);
+    if ($contents === false) {
+        error_log('[ULMAP] Could not read locked pending confirmation file.');
+        http_response_code(500);
+        renderPage(
+            'Kunde inte läsa meddelandet',
+            '<p>Ett tekniskt fel uppstod. Försök igen senare.</p>'
+        );
+        exit;
+    }
+
+    $data = json_decode($contents, true);
 
     if (
         !is_array($data) ||
+        json_last_error() !== JSON_ERROR_NONE ||
         !isset(
             $data['name'],
             $data['email'],
@@ -132,6 +157,9 @@ try {
     );
 
     if (!$sent) {
+        error_log(
+            '[ULMAP] Sending confirmed contact message failed; see email provider error above.'
+        );
         http_response_code(500);
 
         renderPage(
@@ -142,7 +170,9 @@ try {
     }
 
     // Remove pending message after successful sending
-    unlink($file);
+    if (!unlink($file)) {
+        error_log('[ULMAP] Contact message was sent but pending file could not be removed.');
+    }
 
     renderPage(
         'Tack för ditt meddelande!',
