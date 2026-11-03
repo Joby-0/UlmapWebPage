@@ -151,7 +151,7 @@ try {
 }
 
 // Create confirmation link
-$confirmationLink = SITE_URL . '/confirm.php?token=' . $token;
+$confirmationLink = SITE_URL . '/confirm?token=' . $token;
 
 $mailBody =
     "Hej!\n\n" .

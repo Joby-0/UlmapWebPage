@@ -1,0 +1,30 @@
+@import url('../variables.css?v=VERSION');
+@import url('../global.css?v=VERSION');
+@import url('../typography.css?v=VERSION');
+@import url('../layout/header.css?v=VERSION');
+@import url('../layout/footer.css?v=VERSION');
+@import url('../components/buttons.css?v=VERSION');
+
+.confirm-main {
+    flex: 1 0 auto;
+    padding: 5rem 0;
+}
+
+.confirm-card {
+    max-width: 720px;
+    padding: clamp(2rem, 6vw, 4rem);
+    background-color: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--shadow-card);
+}
+
+.confirm-status {
+    color: var(--ulmap-red);
+}
+
+@media (max-width: 767.98px) {
+    .confirm-main {
+        padding: 3rem 0;
+    }
+}
