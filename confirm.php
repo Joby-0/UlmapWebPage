@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             <input type="hidden" name="token" value="' .
                 htmlspecialchars($token, ENT_QUOTES, 'UTF-8') . '">
 
-            <button type="submit">Bekräfta och skicka meddelandet</button>
+            <button class="btn-ulmap" type="submit">Bekräfta och skicka meddelandet</button>
         </form>'
     );
     exit;
@@ -174,12 +174,7 @@ try {
         error_log('[ULMAP] Contact message was sent but pending file could not be removed.');
     }
 
-    renderPage(
-        'Tack för ditt meddelande!',
-        '<p>Din e-postadress är bekräftad och ditt meddelande har skickats till ULMAP.</p>
-         <p>Vi återkommer så snart vi kan.</p>
-         <p><a href="/">Tillbaka till hemsidan</a></p>'
-    );
+    header('Location: /tack-for-meddelandet.html', true, 303);
 
 } finally {
     flock($handle, LOCK_UN);

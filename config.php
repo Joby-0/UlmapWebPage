@@ -156,6 +156,23 @@ function rateLimit(string $identifier): bool
 
 function renderPage(string $title, string $content): void
 {
+    $headerPath = __DIR__ . '/assets/partials/header.html';
+    $footerPath = __DIR__ . '/assets/partials/footer.html';
+    $header = is_readable($headerPath) ? file_get_contents($headerPath) : false;
+    $footer = is_readable($footerPath) ? file_get_contents($footerPath) : false;
+
+    if ($header === false || $footer === false) {
+        logApplicationError(
+            'Rendering branded page',
+            new RuntimeException('Could not read the shared site header or footer.')
+        );
+        http_response_code(500);
+        $title = 'Ett tekniskt fel uppstod';
+        $header = '';
+        $footer = '';
+        $content = '<p>Försök igen senare.</p>';
+    }
+
     header('Content-Type: text/html; charset=UTF-8');
     header('Cache-Control: no-store');
     header('X-Content-Type-Options: nosniff');
@@ -167,12 +184,20 @@ function renderPage(string $title, string $content): void
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>' . htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . '</title>
+        <link rel="icon" type="image/jpeg" href="/assets/images/favicon.jpg">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/css/pages/tack-for-meddelandet.css?v=VERSION">
     </head>
     <body>
-        <main>
-            <h1>' . htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . '</h1>
-            ' . $content . '
+        ' . $header . '
+        <main class="page-content d-flex align-items-center">
+            <div class="container text-center">
+                <h1 class="display-3 fw-bold ulmap-green-text mb-3">' .
+                    htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . '</h1>
+                ' . $content . '
+            </div>
         </main>
+        ' . $footer . '
     </body>
     </html>';
 }

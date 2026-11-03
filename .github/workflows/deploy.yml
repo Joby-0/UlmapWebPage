@@ -47,6 +47,6 @@ jobs:
               --exclude-glob '*.md' \
               --exclude-glob '.gitignore' \
               --exclude-glob '*.yml' \
-              --exclude-glob 'assets/partials/*' \
+              --exclude-glob 'assets/partials/service-hero.html' \
               ./ ./
           "
