@@ -26,7 +26,7 @@ try {
 
 const SITE_URL = 'https://ulmap.se';
 const CONTACT_EMAIL = 'ulrika.maars@ulmap.se';
-const MAIL_FROM = 'ULMAP <noreply@send.ulmap.se>';
+const MAIL_FROM = 'ULMAP <noreply@ulmap.se>';
 
 const TOKEN_LIFETIME = 1800; // 30 minutes
 const RATE_LIMIT_WINDOW = 3600; // 1 hour
