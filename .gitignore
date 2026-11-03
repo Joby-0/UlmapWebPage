@@ -37,3 +37,7 @@ wordpress/wp-content/languages/
 
 # Gemini CLI
 .gemini/
+
+
+#private
+/private/

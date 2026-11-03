@@ -145,11 +145,11 @@ $headers = [
     'From: ULMAP <' . CONTACT_EMAIL . '>'
 ];
 
-$sent = mail(
-    $email,
-    'Bekräfta ditt meddelande till ULMAP',
+$sent = sendSmtpMail(
+    CONTACT_EMAIL,
+    'Nytt meddelande från hemsidan',
     $mailBody,
-    implode("\r\n", $headers)
+    $data['email']
 );
 
 if (!$sent) {
